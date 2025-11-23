@@ -1,0 +1,230 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-gray-900 to-black py-20 px-4">
+      <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-brand-yellow mb-6">
+          Stumped? Call Us.
+        </h1>
+        <p class="text-2xl md:text-3xl text-white mb-4">
+          Jacksonville's Premier Stump Removal Specialists
+        </p>
+        <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          Professional stump grinding and removal services for Jacksonville, FL and surrounding areas. 
+          Licensed, insured, and veteran-owned. Free same-day, over-the-phone estimates!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="tel:+19044082450"
+            class="px-8 py-4 bg-brand-yellow text-black text-xl font-bold rounded-lg hover:bg-yellow-400 transition shadow-lg"
+            onclick="trackEvent('Click', { category: 'Contact', label: 'Hero CTA' })"
+          >
+            📞 Call 904-408-2450
+          </a>
+          <a 
+            href="#contact"
+            class="px-8 py-4 bg-white text-black text-xl font-bold rounded-lg hover:bg-gray-200 transition shadow-lg"
+          >
+            Get Free Estimate
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Services Overview -->
+    <section id="services" class="py-16 px-4 bg-gray-900">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-brand-yellow text-center mb-12">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { title: 'Stump Grinding', desc: 'Complete stump grinding to below ground level', icon: '🪚' },
+            { title: 'Stump Removal', desc: 'Full stump and root system removal', icon: '🌳' },
+            { title: 'Stump Cutting', desc: 'Precision stump cutting services', icon: '⚙️' },
+            { title: 'Tree Trimming', desc: 'Professional tree trimming and maintenance', icon: '✂️' },
+          ].map(service => (
+            <div class="bg-black border border-brand-yellow rounded-lg p-6 text-center hover:border-yellow-400 transition">
+              <div class="text-5xl mb-4">{service.icon}</div>
+              <h3 class="text-xl font-bold text-brand-yellow mb-2">{service.title}</h3>
+              <p class="text-gray-300">{service.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Why Choose Us / About -->
+    <section id="about" class="py-16 px-4 bg-black">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-brand-yellow text-center mb-12">Why Choose Stumpmasters Jax?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: 'Veteran-Owned', desc: 'Proudly serving our community with military precision and dedication', icon: '🇺🇸' },
+            { title: 'Licensed & Insured', desc: 'Fully licensed and insured for your peace of mind', icon: '✅' },
+            { title: 'Free Estimates', desc: 'Same-day, over-the-phone estimates at no cost', icon: '💰' },
+            { title: 'Professional Equipment', desc: 'State-of-the-art stump grinding equipment', icon: '🛠️' },
+            { title: 'Experienced Team', desc: 'Years of experience in stump removal services', icon: '👷' },
+            { title: 'Local Experts', desc: 'Deep knowledge of Northeast Florida properties', icon: '📍' },
+          ].map(feature => (
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6 hover:border-brand-yellow transition">
+              <div class="text-4xl mb-4">{feature.icon}</div>
+              <h3 class="text-xl font-bold text-brand-yellow mb-2">{feature.title}</h3>
+              <p class="text-gray-300">{feature.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Service Areas -->
+    <section class="py-16 px-4 bg-gray-900">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-brand-yellow mb-6">Serving Northeast Florida</h2>
+        <p class="text-xl text-gray-300 mb-8">
+          We proudly serve Jacksonville and the surrounding counties
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+          {['Duval County', 'St. Johns County', 'Clay County', 'Jacksonville', 'Northeast Florida'].map(area => (
+            <span class="px-6 py-3 bg-black border border-brand-yellow rounded-full text-white font-semibold">
+              {area}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Testimonials Placeholder -->
+    <section class="py-16 px-4 bg-black">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-brand-yellow text-center mb-12">What Our Customers Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { name: 'John D.', location: 'Jacksonville, FL', text: 'Outstanding service! They removed three large stumps from my yard quickly and professionally. Highly recommend!' },
+            { name: 'Sarah M.', location: 'St. Johns County', text: 'Great communication and fair pricing. The team was punctual and did an excellent job cleaning up afterwards.' },
+            { name: 'Mike R.', location: 'Clay County', text: 'As a fellow veteran, I appreciate their attention to detail and work ethic. Will definitely use them again!' },
+          ].map(testimonial => (
+            <div class="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <div class="text-brand-yellow text-2xl mb-4">★★★★★</div>
+              <p class="text-gray-300 mb-4 italic">"{testimonial.text}"</p>
+              <p class="text-white font-semibold">{testimonial.name}</p>
+              <p class="text-gray-400 text-sm">{testimonial.location}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 bg-brand-yellow">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-black text-center mb-6">
+          Get Your Free Estimate
+        </h2>
+        <p class="text-xl text-gray-900 text-center mb-8">
+          Call us for a same-day estimate or fill out the form below
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <!-- Contact Info -->
+          <div class="bg-black rounded-lg p-6">
+            <h3 class="text-2xl font-bold text-brand-yellow mb-4">Contact Us</h3>
+            <div class="space-y-4 text-white">
+              <div>
+                <p class="font-semibold text-brand-yellow mb-1">Phone</p>
+                <a href="tel:+19044082450" class="text-xl hover:text-brand-yellow transition" onclick="trackEvent('Click', { category: 'Contact', label: 'Contact Section Phone' })">
+                  904-408-2450
+                </a>
+              </div>
+              <div>
+                <p class="font-semibold text-brand-yellow mb-1">Email</p>
+                <a href="mailto:stumpmastersjax@gmail.com" class="hover:text-brand-yellow transition" onclick="trackEvent('Click', { category: 'Contact', label: 'Contact Section Email' })">
+                  stumpmastersjax@gmail.com
+                </a>
+              </div>
+              <div>
+                <p class="font-semibold text-brand-yellow mb-1">Service Area</p>
+                <p>Jacksonville, FL<br/>Duval, St. Johns & Clay Counties</p>
+              </div>
+              <div>
+                <p class="font-semibold text-brand-yellow mb-1">Hours</p>
+                <p>Monday - Friday<br/>7:00 AM - 7:00 PM</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Form -->
+          <div class="bg-white rounded-lg p-6">
+            <form 
+              action="https://formspree.io/f/YOUR_FORM_ID" 
+              method="POST"
+              class="space-y-4"
+              onsubmit="trackEvent('Lead', { category: 'Contact', label: 'Form Submit' })"
+            >
+              <div>
+                <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-1">Phone *</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-semibold text-gray-700 mb-1">Message *</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="4" 
+                  required
+                  placeholder="Tell us about your stump removal needs..."
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-brand-yellow focus:border-transparent"
+                ></textarea>
+              </div>
+              <button 
+                type="submit"
+                class="w-full px-6 py-3 bg-black text-brand-yellow font-bold rounded hover:bg-gray-900 transition"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <p class="text-gray-900 font-semibold">
+            Prefer to call? Reach us at <a href="tel:+19044082450" class="text-black hover:underline font-bold">904-408-2450</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

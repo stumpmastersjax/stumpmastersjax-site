@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-yellow: #F2C300;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.a11y-hidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }

@@ -1,0 +1,234 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = 'Stumpmasters Jax | Professional Stump Grinding & Removal in Jacksonville, FL',
+  description = 'Professional stump grinding and removal services for Jacksonville, FL and surrounding areas. Licensed, insured, veteran-owned. Free same-day estimates! Call 904-408-2450',
+  image = '/images/logo.png',
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, Astro.site);
+
+// Analytics IDs - replace with actual IDs when available
+const GA4_ID = 'G-XXXXXXXXXX'; // Replace with your GA4 Measurement ID
+const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImage} />
+    
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Stumpmasters Jax",
+      "image": socialImage.toString(),
+      "description": "Professional stump grinding and removal services",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jacksonville",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 30.3322,
+        "longitude": -81.6557
+      },
+      "url": Astro.site?.toString(),
+      "telephone": "+19044082450",
+      "email": "stumpmastersjax@gmail.com",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "19:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Jacksonville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Florida"
+          }
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Duval County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "St. Johns County"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Clay County"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Stump Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stump Grinding"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stump Removal"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Stump Cutting"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tree Trimming"
+            }
+          }
+        ]
+      }
+    })} />
+    
+    <!-- Google Analytics 4 -->
+    <script is:inline define:vars={{ GA4_ID }}>
+      if (localStorage.getItem('analytics-consent') === 'true') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', GA4_ID, { 
+          anonymize_ip: true,
+          cookie_flags: 'SameSite=None;Secure'
+        });
+        
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
+        document.head.appendChild(script);
+      }
+    </script>
+    
+    <!-- Meta Pixel -->
+    <script is:inline define:vars={{ META_PIXEL_ID }}>
+      if (localStorage.getItem('analytics-consent') === 'true') {
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', META_PIXEL_ID);
+        fbq('track', 'PageView');
+      }
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}/>
+    </noscript>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+    
+    <!-- Consent Banner -->
+    <div id="consent-banner" class="hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-brand-yellow p-4 z-50">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-white">
+          We use cookies and analytics to improve your experience. 
+        </p>
+        <div class="flex gap-3">
+          <button id="consent-accept" class="px-4 py-2 bg-brand-yellow text-black font-semibold rounded hover:bg-yellow-400 transition">
+            Accept
+          </button>
+          <button id="consent-decline" class="px-4 py-2 bg-gray-700 text-white font-semibold rounded hover:bg-gray-600 transition">
+            Decline
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <script is:inline>
+      // Consent management
+      (function() {
+        const banner = document.getElementById('consent-banner');
+        const acceptBtn = document.getElementById('consent-accept');
+        const declineBtn = document.getElementById('consent-decline');
+        
+        // Show banner if no consent decision made
+        if (!localStorage.getItem('analytics-consent')) {
+          banner?.classList.remove('hidden');
+        }
+        
+        acceptBtn?.addEventListener('click', () => {
+          localStorage.setItem('analytics-consent', 'true');
+          banner?.classList.add('hidden');
+          window.location.reload(); // Reload to load analytics
+        });
+        
+        declineBtn?.addEventListener('click', () => {
+          localStorage.setItem('analytics-consent', 'false');
+          banner?.classList.add('hidden');
+        });
+      })();
+      
+      // Track events helper
+      window.trackEvent = function(eventName, eventData = {}) {
+        if (localStorage.getItem('analytics-consent') === 'true') {
+          // GA4
+          if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, eventData);
+          }
+          // Meta Pixel
+          if (typeof fbq !== 'undefined') {
+            fbq('track', eventName, eventData);
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
