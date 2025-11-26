@@ -1,6 +1,6 @@
 # Stumpmasters Jax Website
 
-Professional stump grinding and tree trimming services website for Jacksonville, FL.
+Professional stump removal services website for Jacksonville, FL. Built with Astro + Tailwind CSS for GitHub Pages deployment.
 
 ## 🚀 Quick Start
 
@@ -8,7 +8,7 @@ Professional stump grinding and tree trimming services website for Jacksonville,
 # Install dependencies
 npm install
 
-# Start development server
+# Start dev server
 npm run dev
 
 # Build for production
@@ -18,155 +18,72 @@ npm run build
 npm run preview
 ```
 
-Visit `http://localhost:4321` to view the site locally.
+## 📋 Setup Checklist
 
-## 📋 Deployment Status
+### 1. Add Logo
+- Save the Stumpmasters Jax logo to `public/images/logo.png`
 
-✅ **Code pushed to GitHub**  
-⏳ **Next: Enable GitHub Pages** (see instructions below)  
-⏳ **Configure custom domain** (stumpmastersjax.com)
+### 2. Configure Analytics (Optional)
+Edit `src/layouts/BaseLayout.astro` and replace:
+- `GA4_ID = 'G-XXXXXXXXXX'` with your Google Analytics 4 Measurement ID
+- `META_PIXEL_ID = 'YOUR_PIXEL_ID'` with your Meta Pixel ID
 
-## 🔧 Setup Instructions
+### 3. Configure Contact Form
+Edit `src/pages/index.astro` and replace:
+- `action="https://formspree.io/f/YOUR_FORM_ID"` with your Formspree endpoint
+- Or use another form service (Getform, Netlify Forms, etc.)
 
-### Step 1: Enable GitHub Pages
-1. Go to: https://github.com/stumpmastersjax/stumpmastersjax-site/settings/pages
-2. Under **"Source"**, select: **GitHub Actions**
-3. The site will automatically build and deploy on every push to `main`
+### 4. Custom Domain Setup
+- Domain is set to `stumpmastersjax.com` in:
+  - `public/CNAME`
+  - `astro.config.mjs`
+- In GitHub repo settings, configure Pages to use custom domain
+- Add DNS records at your domain registrar:
+  - `A` records pointing to GitHub Pages IPs
+  - Or `CNAME` record pointing to `stumpmastersjax.github.io`
 
-### Step 2: Configure Custom Domain (stumpmastersjax.com)
+### 5. Enable GitHub Pages
+1. Push code to GitHub
+2. Go to repo Settings → Pages
+3. Source: GitHub Actions
+4. The workflow will auto-deploy on push to `main`
 
-#### In GitHub:
-1. Go to repository Settings → Pages
-2. Under "Custom domain", enter: `stumpmastersjax.com`
-3. Save (DNS verification will happen after next step)
+## 🎨 Customization
 
-#### In Your Domain Registrar:
-Add the following DNS records:
+### Colors
+Edit `tailwind.config.mjs` and `src/styles/global.css`:
+- Primary yellow: `#F2C300`
+- Background: `#000000` (black)
+- Text: white
 
-**A Records** (point apex domain to GitHub):
-```
-Host: @
-Value: 185.199.108.153
-Value: 185.199.109.153
-Value: 185.199.110.153
-Value: 185.199.111.153
-```
+### Content
+All content is in `src/pages/index.astro`:
+- Hero section
+- Services
+- About/Why Choose Us
+- Service Areas
+- Testimonials
+- Contact form
 
-**CNAME Record** (point www subdomain):
-```
-Host: www
-Value: stumpmastersjax.github.io
-```
+### Social Links
+Update placeholder social links in `src/components/Footer.astro`
 
-**Wait 24-48 hours** for DNS propagation, then:
-- Return to GitHub Pages settings
-- Check **"Enforce HTTPS"**
+## 📦 Tech Stack
 
-### Step 3: Optional Enhancements
+- **Astro** - Static site generator
+- **Tailwind CSS** - Styling
+- **GitHub Pages** - Hosting
+- **Formspree** - Contact form handling
+- **Google Analytics 4** - Analytics (optional)
+- **Meta Pixel** - Facebook/Instagram tracking (optional)
 
-#### Analytics (Optional)
-To track website visitors:
-1. Open `src/layouts/BaseLayout.astro`
-2. Replace `G-XXXXXXXXXX` with your Google Analytics 4 ID
-3. Replace `YOUR_PIXEL_ID` with your Meta Pixel ID
+## 📞 Contact Info
 
-#### Social Media Links
-Update placeholder links in `src/components/Footer.astro` with your actual profiles.
+- Phone: 904-408-2450
+- Email: stumpmastersjax@gmail.com
+- Location: Jacksonville, FL
+- Hours: Mon-Fri 7am-7pm
 
-## 🎨 Site Features
+## 🔒 License & Insurance
 
-### Current Layout
-- **Navigation Bar**: Logo + Services, About, Contact links
-- **Hero Section**: Logo banner with call-to-action buttons
-- **Our Services**: Stump Grinding/Cutting, Tree Trimming
-- **About Us**: Company info and "Why Choose Us" highlights
-- **Contact Section**: Phone, email, location, hours with icons
-- **Footer**: Logo, social links, contact info
-
-### Design
-- **Colors**: Black background, Heavy Equipment Yellow (#F2C300), White text
-- **Responsive**: Mobile-friendly layout
-- **SEO Optimized**: Sitemap, robots.txt, Open Graph tags, LocalBusiness schema
-
-## 📝 Content Updates
-
-### Edit Content
-- **Homepage**: `src/pages/index.astro`
-- **Header/Navigation**: `src/components/Header.astro`
-- **Footer**: `src/components/Footer.astro`
-
-### Add Photos
-- Place images in `public/images/`
-- Uncomment carousel section in `src/pages/index.astro` (line ~109)
-- Replace placeholder divs with actual image tags
-
-### Update Colors
-Edit `src/styles/global.css`:
-```css
-@theme {
-  --color-brand-yellow: #F2C300;
-  --color-brand-black: #000000;
-}
-```
-
-## 📞 Contact Information
-
-- **Phone**: 904-408-2450
-- **Email**: stumpmastersjax@gmail.com
-- **Service Area**: Jacksonville, FL (Duval, St. Johns, Clay Counties)
-- **Hours**: Monday-Friday, 7:00 AM - 7:00 PM
-
-## 🏢 Business Details
-
-- ✅ Licensed & Insured
-- 🇺🇸 Veteran-Owned
-- 🌳 Services: Stump Grinding/Cutting, Tree Trimming
-- 💰 Free same-day estimates
-
-## 🛠️ Tech Stack
-
-- **Framework**: Astro 5.16
-- **Styling**: Tailwind CSS v4
-- **Deployment**: GitHub Pages
-- **Analytics**: GA4 + Meta Pixel (optional)
-
-## 📁 Project Structure
-
-```
-/
-├── public/
-│   ├── images/
-│   │   └── logo.png          # Your logo
-│   ├── CNAME                 # Custom domain config
-│   └── robots.txt            # SEO
-├── src/
-│   ├── components/
-│   │   ├── Header.astro      # Navigation
-│   │   └── Footer.astro      # Footer
-│   ├── layouts/
-│   │   └── BaseLayout.astro  # Page wrapper
-│   ├── pages/
-│   │   └── index.astro       # Homepage
-│   └── styles/
-│       └── global.css        # Global styles
-├── .github/workflows/
-│   └── deploy.yml            # Auto-deployment
-└── astro.config.mjs          # Astro config
-```
-
-## 🔄 Making Updates
-
-After making changes:
-```bash
-git add .
-git commit -m "Your update description"
-git push origin main
-```
-
-The site will automatically rebuild and deploy via GitHub Actions.
-
-## 📚 Resources
-
-- [Astro Documentation](https://docs.astro.build)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
+Licensed, insured, and veteran-owned business serving Duval, St. Johns, and Clay Counties.
