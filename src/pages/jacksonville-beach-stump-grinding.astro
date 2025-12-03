@@ -1,0 +1,210 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'Stump Grinding Jacksonville Beach FL | Beaches Tree Removal';
+const description = 'Professional stump grinding in Jacksonville Beach, FL. Coastal property specialists. Same-day service, licensed & insured. Serving all Beaches communities. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Service Areas', url: '/service-areas' },
+    { label: 'Jacksonville Beach' }
+  ]} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+      <div class="container-standard text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow mb-4">
+          Stump Grinding Jacksonville Beach FL
+        </h1>
+        <div class="section-divider"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+          Jacksonville Beach's trusted stump grinding and tree removal service. Coastal property specialists serving Jacksonville Beach, Atlantic Beach, and Neptune Beach.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/#contact" class="btn btn-secondary">
+            Get Free Estimate
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beaches Expertise -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Beaches Area Stump Grinding Experts</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-2-col mb-12">
+          <div>
+            <h3 class="subsection-header">Coastal Property Specialists</h3>
+            <p class="text-body">
+              Stump grinding in Jacksonville Beach requires specialized knowledge of coastal conditions. Sandy soil, salt air, and unique tree species present different challenges than inland properties. Our team has extensive experience working with Jacksonville Beach properties and understands these unique requirements.
+            </p>
+            <p class="text-body">
+              We've served hundreds of Jacksonville Beach homeowners and businesses, from oceanfront properties to inland neighborhoods. Whether you're dealing with palm stumps, pine stumps, or hardwood stumps, we have the equipment and expertise to handle it efficiently.
+            </p>
+            
+            <h3 class="subsection-header mt-8">Same-Day Service at the Beaches</h3>
+            <p class="text-body">
+              Living at the beach means you value your time. We offer same-day and next-day stump grinding service throughout Jacksonville Beach, Atlantic Beach, and Neptune Beach. Fast, professional service that respects your property and schedule.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Beaches Service Features</h3>
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Coastal property experience</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Sandy soil specialists</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Oceanfront property approved</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Same-day service available</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Licensed & insured</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Complete cleanup included</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Veteran-owned business</span>
+              </li>
+            </ul>
+            
+            <div class="mt-6">
+              <a href="/reviews" class="btn btn-primary w-full">
+                Read Beaches Reviews
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beaches Communities -->
+    <section class="section bg-black">
+      <div class="container-standard">
+        <h2 class="section-header">Beaches Communities We Serve</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-3-col mb-12">
+          <div class="card">
+            <h3 class="subsection-header-yellow">Jacksonville Beach</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Beaches Town Center</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Pablo Historical Park</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>South Jax Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Oceanfront properties</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Intracoastal areas</span></li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Atlantic Beach</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Atlantic Beach proper</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Seminole Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Mayport area</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Beachfront homes</span></li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Neptune Beach</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Neptune Beach residential</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Jarboe Park area</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Atlantic Blvd corridor</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Coastal neighborhoods</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Jacksonville Beach Stump Services</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-2-col">
+          <div class="card">
+            <h3 class="subsection-header-yellow">Residential Stump Grinding</h3>
+            <p class="text-body text-small">
+              Professional stump grinding for Jacksonville Beach homes. We understand the importance of maintaining your beach property's appearance and value. Clean, efficient service with minimal disruption to your landscaping.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Oceanfront Property Service</h3>
+            <p class="text-body text-small">
+              Specialized stump removal for oceanfront and beachfront properties. We're experienced with the unique challenges of coastal properties, including access limitations and environmental considerations.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Storm Damage Removal</h3>
+            <p class="text-body text-small">
+              Hurricane and storm damage stump removal at Jacksonville Beach. Emergency service available for fallen trees and damaged stumps. We work with insurance companies and provide documentation.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Commercial Properties</h3>
+            <p class="text-body text-small">
+              Serving Jacksonville Beach businesses, hotels, and commercial properties. Professional stump grinding that maintains your property's appearance and safety. Licensed and insured for commercial work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-black">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Professional Stump Grinding at Jacksonville Beach
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Serving all Beaches communities with same-day service. Free estimates for Jacksonville Beach properties!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/#contact" class="btn btn-secondary">
+            Request Free Estimate
+          </a>
+        </div>
+        <p class="text-gray-300 mt-6">
+          <span class="text-brand-yellow font-semibold">Coastal Property Specialists</span> • Licensed & Insured • Same-Day Service
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

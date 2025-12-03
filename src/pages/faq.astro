@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EstimateModal from '../components/EstimateModal.astro';
+
+const title = 'FAQ - Stump Grinding & Tree Removal Questions | Stumpmasters Jax';
+const description = 'Frequently asked questions about stump grinding, tree stump removal, and tree services in Jacksonville, FL. Get answers about pricing, service areas, and more.';
+
+// FAQ Schema for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is stump grinding and how does it work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stump grinding is a process where we use specialized equipment to grind tree stumps below ground level, typically 6-12 inches deep. Our professional stump grinder has a rotating cutting disk that chips away the wood, turning the stump into mulch. This method is faster, cleaner, and more affordable than complete stump removal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does stump grinding cost in Jacksonville, FL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stump grinding costs in Jacksonville typically depend on the size and number of stumps. We offer competitive, affordable pricing throughout Duval, St. Johns, and Clay Counties. We provide free same-day estimates over the phone. As a veteran-owned business, we also offer 10% off for active military members and veterans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between stump grinding and stump removal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stump grinding grinds the visible stump below ground level, leaving the roots to naturally decompose over time. Complete stump removal involves excavating the entire stump and root ball. For most residential and commercial properties in Jacksonville, stump grinding is the preferred solution as it's faster, more affordable, and causes less disruption to your landscape."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do you provide stump grinding services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We proudly serve all of Northeast Florida, including Duval County (Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach), St. Johns County (St. Augustine, Ponte Vedra, Ponte Vedra Beach), and Clay County (Orange Park, Middleburg, Green Cove Springs)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer same-day or next-day service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We offer same-day service, next-day service, and weekend scheduling throughout Jacksonville and surrounding areas. We understand that stump removal is often time-sensitive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you licensed and insured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Stumpmasters Jax is fully licensed and insured for all stump grinding and tree removal services in Jacksonville, FL and surrounding areas. We carry comprehensive liability insurance to protect your property."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- FAQ Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'FAQ' }
+  ]} />
+  
+  <main>
+    <!-- FAQ Hero Section -->
+    <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow mb-4">
+          Frequently Asked Questions
+        </h1>
+        <div class="w-24 h-1 bg-brand-yellow mx-auto mb-6"></div>
+        <p class="text-xl text-gray-300 leading-relaxed">
+          Everything you need to know about stump grinding and tree removal services in Jacksonville, FL
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="py-16 px-4 bg-gray-700">
+      <div class="max-w-4xl mx-auto">
+        <!-- Service Questions -->
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-brand-yellow mb-8 pb-4 border-b-2 border-brand-yellow">
+            Stump Grinding & Removal Services
+          </h2>
+          
+          <div class="space-y-6">
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                What is stump grinding and how does it work?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Stump grinding is a process where we use specialized equipment to grind tree stumps below ground level, typically 6-12 inches deep. Our professional stump grinder has a rotating cutting disk that chips away the wood, turning the stump into mulch. This method is faster, cleaner, and more affordable than complete stump removal, which involves digging out the entire root system. The resulting wood chips can be used as mulch in your yard or removed as part of our debris haul away service.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                How much does stump grinding cost in Jacksonville, FL?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Stump grinding costs in Jacksonville typically depend on the size and number of stumps. We offer competitive, affordable pricing throughout Duval, St. Johns, and Clay Counties. Most residential stump grinding projects range from small single stumps to large multi-stump jobs. We provide free same-day estimates over the phone - just call <a href="tel:+19044082450" class="text-brand-yellow hover:underline font-semibold">904-408-2450</a> and describe your project. As a veteran-owned business, we also offer 10% off for active military members and veterans.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                What's the difference between stump grinding and stump removal?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Stump grinding grinds the visible stump below ground level, leaving the roots to naturally decompose over time. This is the most common and cost-effective method. Complete stump removal involves excavating the entire stump and root ball, which is more labor-intensive and expensive but leaves no roots behind. For most residential and commercial properties in Jacksonville, stump grinding is the preferred solution as it's faster, more affordable, and causes less disruption to your landscape.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Is there a size limit for stumps you can grind?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                No! We can handle stumps of any size. Our professional-grade equipment is designed to tackle everything from small shrub stumps to massive oak and pine tree stumps. Whether you have a single 6-inch stump or multiple 4-foot diameter stumps, Stumpmasters Jax has the expertise and equipment to get the job done efficiently throughout Jacksonville and surrounding areas.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                What do you do with the wood chips after grinding?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                After stump grinding, we can either leave the wood chips on-site for you to use as mulch in your landscaping, or we can haul them away as part of our tree debris removal service. Many Jacksonville homeowners choose to keep the chips as they make excellent natural mulch for gardens and flower beds. If you prefer a completely clean site, we'll remove all debris and leave your yard looking pristine.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Area Questions -->
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-brand-yellow mb-8 pb-4 border-b-2 border-brand-yellow">
+            Service Areas & Scheduling
+          </h2>
+          
+          <div class="space-y-6">
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Where do you provide stump grinding services?
+              </h3>
+              <p class="text-gray-300 leading-relaxed mb-3">
+                We proudly serve all of Northeast Florida, including:
+              </p>
+              <ul class="text-gray-300 space-y-2 ml-6">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-yellow mt-1">•</span>
+                  <span><strong class="text-white">Duval County:</strong> Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-yellow mt-1">•</span>
+                  <span><strong class="text-white">St. Johns County:</strong> St. Augustine, Ponte Vedra, Ponte Vedra Beach</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-yellow mt-1">•</span>
+                  <span><strong class="text-white">Clay County:</strong> Orange Park, Middleburg, Green Cove Springs</span>
+                </li>
+              </ul>
+              <p class="text-gray-300 leading-relaxed mt-3">
+                If you're searching for "stump grinding near me" in Northeast Florida, we've got you covered!
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Do you offer same-day or next-day service?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Yes! We offer same-day service, next-day service, and weekend scheduling throughout Jacksonville and surrounding areas. We understand that stump removal is often time-sensitive, whether you're preparing for a landscaping project, selling your home, or dealing with storm damage. Call us at <a href="tel:+19044082450" class="text-brand-yellow hover:underline font-semibold">904-408-2450</a> to check availability for your preferred date.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                How do I get a free estimate?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Getting a free estimate is easy! Simply call us at <a href="tel:+19044082450" class="text-brand-yellow hover:underline font-semibold">904-408-2450</a> and provide details about your stump(s) - approximate size, number of stumps, and location. We can often provide same-day estimates over the phone. For larger commercial projects or complex situations, we can schedule an on-site visit. You can also submit a request through our <a href="/#contact" class="text-brand-yellow hover:underline">contact form</a> and we'll get back to you promptly.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tree Services Questions -->
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-brand-yellow mb-8 pb-4 border-b-2 border-brand-yellow">
+            Tree Trimming & Additional Services
+          </h2>
+          
+          <div class="space-y-6">
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                What tree trimming services do you offer?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                We provide professional tree trimming and pruning services for trees up to 15 feet in height. This includes routine maintenance, overgrown branch removal, and light trimming to keep your trees healthy and your property safe. Our tree trimming services are perfect for maintaining smaller ornamental trees, removing low-hanging branches, and cleaning up after storms. For taller trees requiring specialized equipment, we can recommend trusted partners in the Jacksonville area.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Do you provide tree debris haul away services?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Absolutely! We offer complete tree debris removal and haul away services throughout Jacksonville, FL. Whether you need cleanup after stump grinding, tree trimming, storm damage, or any other tree work, we'll remove all debris and leave your property clean. This service is available for both residential and commercial properties in Duval, St. Johns, and Clay Counties.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Can you help with storm damage cleanup?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Yes! Jacksonville residents know that storms can leave behind fallen trees, broken branches, and damaged stumps. We provide emergency storm damage cleanup services including stump grinding, tree debris removal, and haul away. We understand the urgency after severe weather and offer flexible scheduling to help you restore your property quickly and safely.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business & Safety Questions -->
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-brand-yellow mb-8 pb-4 border-b-2 border-brand-yellow">
+            Business & Safety Information
+          </h2>
+          
+          <div class="space-y-6">
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Are you licensed and insured?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Yes! Stumpmasters Jax is fully licensed and insured for your protection. We carry comprehensive liability insurance to protect your property during all stump grinding and tree service work. As a professional tree service company operating in Jacksonville, FL, we meet all local and state requirements. You can have complete peace of mind knowing that your property and our team are fully protected.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Do you offer military or veteran discounts?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Yes! As a veteran-owned and operated business, we're proud to offer 10% off the quoted price for all active military members and veterans. This is our way of saying thank you for your service. Just mention your military status when you call for your free estimate at <a href="tel:+19044082450" class="text-brand-yellow hover:underline font-semibold">904-408-2450</a>.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Do you work with both residential and commercial clients?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Yes! We provide stump grinding and tree services for both residential and commercial properties throughout Jacksonville and Northeast Florida. Whether you're a homeowner with a single stump, a property manager maintaining multiple locations, or a commercial developer clearing land, we have the equipment and expertise to handle projects of all sizes. We offer professional quotes tailored to your specific needs.
+              </p>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="bg-black border-l-4 border-brand-yellow p-6 rounded-r-lg">
+              <h3 class="text-xl font-bold text-white mb-3">
+                Will stump grinding damage my yard or landscaping?
+              </h3>
+              <p class="text-gray-300 leading-relaxed">
+                Our professional team takes great care to minimize any impact on your property. Modern stump grinding equipment is designed to access tight spaces and work efficiently without causing unnecessary damage. We'll discuss access routes and any concerns before starting work. While there may be minor disturbance to the immediate area around the stump, we work carefully to protect your lawn, landscaping, and hardscaping. Any wood chips left behind can actually benefit your soil as they decompose.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="mt-16 bg-black border-4 border-brand-yellow rounded-lg p-8 text-center">
+          <h2 class="text-3xl font-bold text-brand-yellow mb-4">
+            Still Have Questions?
+          </h2>
+          <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+            We're here to help! Contact Stumpmasters Jax for expert advice and free estimates.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="tel:+19044082450"
+              class="px-8 py-3 bg-brand-yellow text-black text-lg font-bold rounded hover:bg-yellow-400 transition"
+              onclick="trackEvent('Click', { category: 'Contact', label: 'FAQ CTA Phone' })"
+            >
+              📞 Call 904-408-2450
+            </a>
+            <button 
+              data-open-estimate-modal
+              class="px-8 py-3 bg-gray-700 text-white text-lg font-bold rounded hover:bg-gray-600 transition border-2 border-brand-yellow"
+            >
+              Request Free Estimate
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  <EstimateModal />
+</BaseLayout>

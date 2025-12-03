@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'St. Johns County Stump Grinding FL | Tree Removal | Stumpmasters Jax';
+const description = 'Professional stump grinding and tree removal throughout St. Johns County, FL. Serving St. Augustine, Ponte Vedra, Ponte Vedra Beach. Next-day service. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Service Areas', url: '/service-areas' },
+    { label: 'St. Johns County' }
+  ]} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+      <div class="container-standard text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow mb-4">
+          St. Johns County Stump Grinding & Tree Removal
+        </h1>
+        <div class="section-divider"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+          Professional stump grinding and tree removal services throughout St. Johns County, Florida. Serving St. Augustine, Ponte Vedra, and all surrounding communities.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/contact" class="btn btn-secondary">
+            Get Free Estimate
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Serving All of St. Johns County</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-2-col mb-12">
+          <div>
+            <h3 class="subsection-header">St. Johns County's Trusted Tree Service</h3>
+            <p class="text-body">
+              Stumpmasters Jax provides professional stump grinding and tree removal services throughout St. Johns County. From historic St. Augustine to upscale Ponte Vedra communities, we bring the same veteran-owned dedication and expertise to every project.
+            </p>
+            <p class="text-body">
+              St. Johns County is known for its historic charm, beautiful beaches, and upscale communities. We understand the high standards expected in St. Johns County and deliver exceptional results that respect your property's character and value.
+            </p>
+            <p class="text-body">
+              We offer next-day service throughout St. Johns County, with same-day availability in many areas. Whether you're in coastal Ponte Vedra or historic St. Augustine, we're ready to serve you.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">St. Johns County Service Features</h3>
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Next-day service available</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Historic property specialists</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Upscale community experience</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Licensed & insured</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Veteran-owned business</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Free estimates</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cities & Communities -->
+    <section class="section bg-black">
+      <div class="container-standard">
+        <h2 class="section-header">St. Johns County Communities We Serve</h2>
+        <div class="section-divider"></div>
+        <p class="section-intro">
+          Professional stump grinding throughout all St. Johns County areas
+        </p>
+        
+        <div class="grid-3-col mb-12">
+          <!-- St. Augustine -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">St. Augustine</h3>
+            <p class="text-body text-small mb-4">
+              Serving America's oldest city with professional stump grinding that respects historic properties.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Historic District</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>St. Augustine Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>World Golf Village</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Anastasia Island</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>St. Augustine Shores</span></li>
+            </ul>
+          </div>
+
+          <!-- Ponte Vedra -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Ponte Vedra</h3>
+            <p class="text-body text-small mb-4">
+              Premium stump grinding services for Ponte Vedra's upscale properties and communities.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Ponte Vedra proper</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Sawgrass</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Nocatee</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Palm Valley</span></li>
+            </ul>
+          </div>
+
+          <!-- Ponte Vedra Beach -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Ponte Vedra Beach</h3>
+            <p class="text-body text-small mb-4">
+              Specialized stump removal for oceanfront and golf course properties in Ponte Vedra Beach.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Oceanfront properties</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>TPC Sawgrass area</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Marsh Landing</span></li>
+            </ul>
+          </div>
+
+          <!-- Fruit Cove -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Fruit Cove</h3>
+            <p class="text-body text-small mb-4">
+              Professional tree services for Fruit Cove residential communities and properties.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Fruit Cove proper</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Julington Creek</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Bartram Trail area</span></li>
+            </ul>
+          </div>
+
+          <!-- Hastings -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Hastings</h3>
+            <p class="text-body text-small mb-4">
+              Serving Hastings and rural St. Johns County with reliable stump grinding services.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Hastings proper</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Rural St. Johns County</span></li>
+            </ul>
+          </div>
+
+          <!-- Additional Areas -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Additional Communities</h3>
+            <p class="text-body text-small mb-4">
+              We serve all St. Johns County communities and unincorporated areas.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Elkton</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Switzerland</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Vilano Beach</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Our St. Johns County Services</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-3-col">
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Stump Grinding</h3>
+            <p class="text-body text-small">
+              Professional stump grinding throughout St. Johns County. We handle stumps of all sizes with care and precision, respecting your property's value.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Tree Trimming</h3>
+            <p class="text-body text-small">
+              Expert tree trimming and pruning services up to 15 feet. Maintain the beauty and safety of your St. Johns County property.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Debris Removal</h3>
+            <p class="text-body text-small">
+              Complete cleanup and debris haul away services. We leave your St. Johns County property looking pristine.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-black">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Professional Stump Grinding Throughout St. Johns County
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Next-day service available! Get your free estimate for St. Johns County stump grinding today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/contact" class="btn btn-secondary">
+            Request Free Estimate
+          </a>
+        </div>
+        <p class="text-gray-300 mt-6">
+          <span class="text-brand-yellow font-semibold">Serving All of St. Johns County</span> • Licensed & Insured • Next-Day Service
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

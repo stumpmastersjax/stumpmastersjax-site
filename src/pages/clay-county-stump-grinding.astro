@@ -1,0 +1,242 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'Clay County Stump Grinding FL | Tree Removal Services | Stumpmasters Jax';
+const description = 'Professional stump grinding and tree removal throughout Clay County, FL. Serving Orange Park, Middleburg, Green Cove Springs. Next-day service. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Service Areas', url: '/service-areas' },
+    { label: 'Clay County' }
+  ]} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+      <div class="container-standard text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow mb-4">
+          Clay County Stump Grinding & Tree Removal
+        </h1>
+        <div class="section-divider"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+          Professional stump grinding and tree removal services throughout Clay County, Florida. Serving Orange Park, Middleburg, Green Cove Springs, and all surrounding areas.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/contact" class="btn btn-secondary">
+            Get Free Estimate
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Serving All of Clay County</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-2-col mb-12">
+          <div>
+            <h3 class="subsection-header">Clay County's Reliable Tree Service</h3>
+            <p class="text-body">
+              Stumpmasters Jax provides professional stump grinding and tree removal services throughout Clay County. As a veteran-owned business, we bring dedication and reliability to every project, whether residential or commercial.
+            </p>
+            <p class="text-body">
+              Clay County is home to growing communities like Orange Park and Fleming Island, as well as historic Green Cove Springs. We serve both suburban neighborhoods and rural properties with the same professional service and attention to detail.
+            </p>
+            <p class="text-body">
+              We offer next-day service throughout Clay County, with flexible scheduling to accommodate your needs. From small residential stumps to large commercial projects, we have the equipment and expertise to handle any job.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Clay County Service Features</h3>
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Next-day service available</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Residential & commercial</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Rural property experience</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Licensed & insured</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Veteran-owned business</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Free estimates</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cities & Communities -->
+    <section class="section bg-black">
+      <div class="container-standard">
+        <h2 class="section-header">Clay County Communities We Serve</h2>
+        <div class="section-divider"></div>
+        <p class="section-intro">
+          Professional stump grinding throughout all Clay County areas
+        </p>
+        
+        <div class="grid-3-col mb-12">
+          <!-- Orange Park -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Orange Park</h3>
+            <p class="text-body text-small mb-4">
+              Orange Park's trusted stump grinding service for residential and commercial properties.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Orange Park proper</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Fleming Island</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Lakeside</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Argyle</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Doctors Inlet</span></li>
+            </ul>
+          </div>
+
+          <!-- Middleburg -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Middleburg</h3>
+            <p class="text-body text-small mb-4">
+              Professional stump removal for Middleburg residential and agricultural properties.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Middleburg proper</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Black Creek</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Rural Clay County</span></li>
+            </ul>
+          </div>
+
+          <!-- Green Cove Springs -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Green Cove Springs</h3>
+            <p class="text-body text-small mb-4">
+              Serving the Clay County seat with reliable stump grinding and tree services.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Green Cove Springs</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Penney Farms</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Historic downtown</span></li>
+            </ul>
+          </div>
+
+          <!-- Keystone Heights -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Keystone Heights</h3>
+            <p class="text-body text-small mb-4">
+              Professional tree services for Keystone Heights and surrounding lake communities.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Keystone Heights</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Lake Geneva</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Lake Brooklyn</span></li>
+            </ul>
+          </div>
+
+          <!-- Oakleaf -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Oakleaf</h3>
+            <p class="text-body text-small mb-4">
+              Serving Oakleaf Plantation and surrounding residential communities.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Oakleaf Plantation</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Oakleaf Village</span></li>
+            </ul>
+          </div>
+
+          <!-- Additional Areas -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Additional Communities</h3>
+            <p class="text-body text-small mb-4">
+              We serve all Clay County communities and unincorporated areas.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Hibernia</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Russell</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Bellair</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Our Clay County Services</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-3-col">
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Stump Grinding</h3>
+            <p class="text-body text-small">
+              Professional stump grinding throughout Clay County. From residential yards to commercial properties, we handle all your stump removal needs.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Tree Trimming</h3>
+            <p class="text-body text-small">
+              Expert tree trimming and pruning services up to 15 feet. Keep your Clay County property safe and well-maintained.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Debris Removal</h3>
+            <p class="text-body text-small">
+              Complete tree debris haul away services. Professional cleanup for residential and commercial properties throughout Clay County.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-black">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Professional Stump Grinding Throughout Clay County
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Next-day service available! Get your free estimate for Clay County stump grinding today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/contact" class="btn btn-secondary">
+            Request Free Estimate
+          </a>
+        </div>
+        <p class="text-gray-300 mt-6">
+          <span class="text-brand-yellow font-semibold">Serving All of Clay County</span> • Licensed & Insured • Next-Day Service
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

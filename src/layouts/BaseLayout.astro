@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = 'Stumpmasters Jax | Professional Stump Grinding & Removal in Jacksonville, FL',
-  description = 'Professional stump grinding and removal services for Jacksonville, FL and surrounding areas. Licensed, insured, veteran-owned. Free same-day estimates! Call 904-408-2450',
+  title = 'Stump Grinding Jacksonville FL | Stumpmasters Jax',
+  description = 'Professional stump grinding in Jacksonville, FL. Veteran-owned, licensed & insured. Same-day service available. Serving Duval, St. Johns & Clay. Call 904-408-2450',
   image = '/images/logo.png',
   noindex = false,
 } = Astro.props;
@@ -52,10 +52,23 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "HomeAndConstructionBusiness",
+      "@id": `${Astro.site}#business`,
       "name": "Stumpmasters Jax",
+      "alternateName": "Stumpmasters Jacksonville",
       "image": socialImage.toString(),
-      "description": "Professional stump grinding and removal services",
+      "logo": `${Astro.site}images/logo.png`,
+      "description": "Professional stump grinding, tree stump removal, tree trimming, and debris haul away services in Jacksonville, FL. Veteran-owned and operated serving Duval County, St. Johns County, and Clay County.",
+      "url": Astro.site?.toString(),
+      "telephone": "+19044082450",
+      "email": "stumpmastersjax@gmail.com",
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61584228996836",
+        "https://www.instagram.com/stumpmastersjax",
+        "https://www.youtube.com/@stumpmastersjax",
+        "https://www.google.com/search?q=stumpmasters+jax"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Jacksonville",
@@ -67,10 +80,6 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
         "latitude": 30.3322,
         "longitude": -81.6557
       },
-      "url": Astro.site?.toString(),
-      "telephone": "+19044082450",
-      "email": "stumpmastersjax@gmail.com",
-      "priceRange": "$$",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -89,6 +98,42 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
           }
         },
         {
+          "@type": "City",
+          "name": "Jacksonville Beach"
+        },
+        {
+          "@type": "City",
+          "name": "Atlantic Beach"
+        },
+        {
+          "@type": "City",
+          "name": "Neptune Beach"
+        },
+        {
+          "@type": "City",
+          "name": "St. Augustine"
+        },
+        {
+          "@type": "City",
+          "name": "Ponte Vedra"
+        },
+        {
+          "@type": "City",
+          "name": "Ponte Vedra Beach"
+        },
+        {
+          "@type": "City",
+          "name": "Orange Park"
+        },
+        {
+          "@type": "City",
+          "name": "Middleburg"
+        },
+        {
+          "@type": "City",
+          "name": "Green Cove Springs"
+        },
+        {
           "@type": "AdministrativeArea",
           "name": "Duval County"
         },
@@ -103,38 +148,116 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Stump Services",
+        "name": "Tree & Stump Services",
         "itemListElement": [
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Stump Grinding"
-            }
+              "name": "Stump Grinding",
+              "description": "Professional stump grinding services in Jacksonville, FL. Fast, efficient removal of tree stumps of all sizes."
+            },
+            "availability": "https://schema.org/InStock"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Stump Removal"
-            }
+              "name": "Tree Stump Removal",
+              "description": "Complete tree stump removal for residential and commercial properties throughout Northeast Florida."
+            },
+            "availability": "https://schema.org/InStock"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Stump Cutting"
-            }
+              "name": "Tree Trimming",
+              "description": "Professional tree trimming and pruning services up to 15 feet. Maintain healthy, beautiful trees."
+            },
+            "availability": "https://schema.org/InStock"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Tree Trimming"
-            }
+              "name": "Tree Debris Haul Away",
+              "description": "Complete tree debris removal and haul away services. Clean, professional cleanup."
+            },
+            "availability": "https://schema.org/InStock"
           }
         ]
-      }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "reviewCount": "6"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Mack O."
+          },
+          "datePublished": "2025-12",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Stumpmasters Jax did an outstanding job from start to finish. They were fast, courteous, and incredibly professional... It was honestly a breath of fresh air having a U.S. veteran take care of the work."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Shannon L."
+          },
+          "datePublished": "2025-11",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "I had an amazing experience with this stump removal service! They were fast, professional, and super thorough... They cleaned up the entire area afterward, leaving my yard looking better than before."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "William V."
+          },
+          "datePublished": "2025-12",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Professional and reasonably priced. Was able to fit me in same day and did a fantastic job! Highly recommend."
+        }
+      ],
+      "paymentAccepted": "Cash, Check, Credit Card, Debit Card",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Veteran Owned",
+          "value": true
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Licensed and Insured",
+          "value": true
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Same Day Service Available",
+          "value": true
+        }
+      ],
+      "slogan": "Professional Stump Grinding & Tree Removal - Veteran Owned"
     })} />
     
     <!-- Google Analytics 4 -->

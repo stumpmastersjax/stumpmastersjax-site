@@ -1,0 +1,283 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'Stump Grinding Jacksonville FL | #1 Tree Stump Removal Service';
+const description = 'Professional stump grinding in Jacksonville, FL. Same-day service, veteran-owned, licensed & insured. Serving all Jacksonville neighborhoods. Free estimates! Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Service Areas', url: '/service-areas' },
+    { label: 'Jacksonville Stump Grinding' }
+  ]} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+      <div class="container-standard text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow mb-4">
+          Stump Grinding Jacksonville FL
+        </h1>
+        <div class="section-divider"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+          Jacksonville's #1 rated stump grinding and tree stump removal service. Veteran-owned, licensed & insured. Same-day service available throughout all Jacksonville neighborhoods.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/#contact" class="btn btn-secondary">
+            Get Free Estimate
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us for Jacksonville -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Why Jacksonville Chooses Stumpmasters Jax</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-2-col mb-12">
+          <div>
+            <h3 class="subsection-header">Local Jacksonville Experts</h3>
+            <p class="text-body">
+              As a Jacksonville-based, veteran-owned business, we understand the unique challenges of stump grinding in Northeast Florida. From sandy coastal soil to clay-heavy inland areas, we have the experience and equipment to handle any stump removal job in Jacksonville.
+            </p>
+            <p class="text-body">
+              We've served thousands of Jacksonville homeowners and businesses, from historic Riverside and Avondale to growing Southside and Mandarin communities. Our local expertise means we know Jacksonville's trees, soil conditions, and property requirements.
+            </p>
+            
+            <h3 class="subsection-header mt-8">Same-Day Service in Jacksonville</h3>
+            <p class="text-body">
+              Need a stump removed quickly? We offer same-day and next-day stump grinding service throughout Jacksonville. Whether you're preparing for a landscaping project, selling your home, or addressing a safety hazard, we're ready to help.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Jacksonville Service Highlights</h3>
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Same-day service available</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Veteran-owned & operated</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Licensed & insured in Jacksonville</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Free estimates over the phone</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">10% military & veteran discount</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Weekend scheduling available</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Complete debris cleanup</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">5-star rated on Google</span>
+              </li>
+            </ul>
+            
+            <div class="mt-6">
+              <a href="/reviews" class="btn btn-primary w-full">
+                Read Jacksonville Reviews
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jacksonville Neighborhoods Served -->
+    <section class="section bg-black">
+      <div class="container-standard">
+        <h2 class="section-header">Jacksonville Neighborhoods We Serve</h2>
+        <div class="section-divider"></div>
+        <p class="section-intro">
+          Professional stump grinding and tree removal throughout all Jacksonville areas
+        </p>
+        
+        <div class="grid-3-col mb-12">
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Urban Core</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Downtown Jacksonville</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Riverside</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Avondale</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>San Marco</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Springfield</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Murray Hill</span></li>
+            </ul>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Southside</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Baymeadows</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Mandarin</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>San Jose</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Southside</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Deerwood</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Tinseltown</span></li>
+            </ul>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Beaches</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Jacksonville Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Atlantic Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Neptune Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Mayport</span></li>
+            </ul>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Northside</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Northside</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Brentwood</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Oceanway</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>New Berlin</span></li>
+            </ul>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Westside</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Westside</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Ortega</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Cedar Hills</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Lake Shore</span></li>
+            </ul>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Arlington</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Arlington</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Regency</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Monument Road</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Fort Caroline</span></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <p class="text-xl text-gray-300 mb-4">
+            Don't see your Jacksonville neighborhood listed?
+          </p>
+          <p class="text-gray-300 mb-6">
+            We serve ALL of Jacksonville and Duval County! <a href="tel:+19044082450" class="text-brand-yellow hover:underline font-semibold">Call us at 904-408-2450</a> to confirm service in your area.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services in Jacksonville -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Our Jacksonville Stump Grinding Services</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-3-col">
+          <div class="card">
+            <h3 class="subsection-header-yellow">Residential Stump Grinding</h3>
+            <p class="text-body text-small">
+              Professional stump grinding for Jacksonville homeowners. We remove stumps of all sizes from your yard, preparing your property for landscaping, construction, or simply improving curb appeal. Clean, efficient service with complete debris removal.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Commercial Stump Removal</h3>
+            <p class="text-body text-small">
+              Serving Jacksonville businesses, property managers, and contractors. We handle large-scale stump removal projects for commercial properties, new construction sites, and property maintenance. Licensed and insured for commercial work.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Emergency Stump Removal</h3>
+            <p class="text-body text-small">
+              Storm damage or fallen tree? We offer emergency stump grinding services in Jacksonville. Same-day service available for urgent situations. We work with insurance companies and can provide documentation for claims.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jacksonville FAQ -->
+    <section class="section bg-black">
+      <div class="container-narrow">
+        <h2 class="section-header">Jacksonville Stump Grinding FAQs</h2>
+        <div class="section-divider"></div>
+        
+        <div class="space-y-6">
+          <div class="card">
+            <h3 class="subsection-header-yellow">How much does stump grinding cost in Jacksonville?</h3>
+            <p class="text-body text-small">
+              Stump grinding costs in Jacksonville vary based on stump size, location, and accessibility. We offer competitive pricing throughout Jacksonville and provide free estimates over the phone. Call <a href="tel:+19044082450" class="text-brand-yellow hover:underline">904-408-2450</a> for a quote specific to your Jacksonville property.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Do you offer same-day stump grinding in Jacksonville?</h3>
+            <p class="text-body text-small">
+              Yes! We offer same-day and next-day stump grinding service throughout Jacksonville. Availability depends on our schedule, but we prioritize quick service for Jacksonville customers. Weekend appointments are also available.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Are you licensed for stump grinding in Jacksonville?</h3>
+            <p class="text-body text-small">
+              Absolutely. Stumpmasters Jax is fully licensed and insured for all stump grinding and tree removal work in Jacksonville and throughout Duval County. We carry comprehensive liability insurance to protect your Jacksonville property.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-gray-700">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Ready for Professional Stump Grinding in Jacksonville?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Get your free estimate today! Same-day service available throughout Jacksonville.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/#contact" class="btn btn-secondary">
+            Request Free Estimate
+          </a>
+        </div>
+        <p class="text-gray-300 mt-6">
+          <span class="text-brand-yellow font-semibold">Veteran-Owned</span> • Licensed & Insured • 5-Star Rated • Same-Day Service
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

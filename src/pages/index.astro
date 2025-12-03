@@ -2,61 +2,66 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import EstimateModal from '../components/EstimateModal.astro';
 ---
 
 <BaseLayout>
   <Header />
   
   <main>
-    <!-- Logo and Services Section -->
+    <!-- Hero Section with Logo and H1 -->
     <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-yellow mb-6">
+          Stump Grinding Jacksonville FL | Professional Tree Stump Removal
+        </h1>
+        <img src="/images/logo.png" alt="Stumpmasters Jax - Professional Stump Grinding and Tree Removal Services in Jacksonville FL" class="mx-auto w-full h-auto mb-6" style="max-width: 576px;" />
+        <p class="text-lg md:text-xl text-white mb-8 max-w-3xl mx-auto">
+          Veteran-Owned Stump Grinding & Tree Removal Serving Duval, St. Johns & Clay Counties
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="tel:+19044082450"
+            class="btn btn-primary"
+            onclick="trackEvent('Click', { category: 'Contact', label: 'Hero CTA' })"
+          >
+            📞 Call 904-408-2450
+          </a>
+          <button 
+            data-open-estimate-modal
+            class="btn btn-secondary"
+          >
+            Get Free Estimate
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-4 bg-gray-700">
       <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <!-- Left Column - Logo -->
-          <div class="text-center lg:text-left">
-            <img src="/images/logo.png" alt="Stumpmasters Jax" class="mx-auto lg:mx-0 w-full h-auto mb-6" style="max-width: 576px;" />
-            <p class="text-xl md:text-2xl text-white mb-6">
-              Jacksonville's Premier Stump Grinding Specialists
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a 
-                href="tel:+19044082450"
-                class="px-8 py-3 bg-brand-yellow text-black text-lg font-bold rounded hover:bg-yellow-400 transition"
-                onclick="trackEvent('Click', { category: 'Contact', label: 'Hero CTA' })"
-              >
-                📞 Call 904-408-2450
-              </a>
-              <button 
-                id="open-estimate-modal"
-                class="px-8 py-3 bg-white text-black text-lg font-bold rounded hover:bg-gray-200 transition"
-              >
-                Get Free Estimate
-              </button>
+        <h2 class="text-4xl font-bold text-brand-yellow text-center mb-4">Professional Tree Services in Jacksonville, FL</h2>
+        <div class="w-24 h-1 bg-brand-yellow mx-auto mb-12"></div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { 
+              title: 'Tree Stump Grinding & Removal', 
+              desc: 'Professional stump grinding and tree stump removal services in Jacksonville, FL. We remove stumps below ground level for residential and commercial properties. Affordable stump grinding near you in Duval, St. Johns, and Clay Counties. No stump too large!'
+            },
+            { 
+              title: 'Tree Trimming & Pruning', 
+              desc: 'Expert tree trimming services up to 15 feet for properties throughout Jacksonville Beach, Atlantic Beach, Neptune Beach, and surrounding areas. Keep your trees healthy and your property safe with our professional maintenance.'
+            },
+            { 
+              title: 'Tree Debris Haul Away', 
+              desc: 'Complete tree debris removal and haul away services in Jacksonville, FL. We handle cleanup after stump grinding, tree trimming, or storm damage. Same-day and next-day service available throughout Northeast Florida.'
+            },
+          ].map(service => (
+            <div class="bg-black border-2 border-brand-yellow rounded-lg p-6 hover:bg-gray-900 transition">
+              <h3 class="text-2xl font-bold text-brand-yellow mb-3">{service.title}</h3>
+              <p class="text-gray-300 leading-relaxed">{service.desc}</p>
             </div>
-          </div>
-          
-          <!-- Right Column - Our Services -->
-          <div id="services">
-            <h2 class="text-4xl font-bold text-brand-yellow mb-4">Our Services</h2>
-            <div class="w-24 h-1 bg-brand-yellow mb-8"></div>
-            <div class="space-y-6">
-              {[
-                { 
-                  title: 'Stump Grinding/Cutting', 
-                  desc: 'Professional stump grinding services that remove stumps below ground level, allowing you to reclaim your yard space. We use state-of-the-art equipment for efficient and safe removal.'
-                },
-                { 
-                  title: 'Tree Trimming', 
-                  desc: 'Professional tree trimming and maintenance to keep your trees healthy and your property safe. From routine pruning to storm damage cleanup, we handle it all.'
-                },
-              ].map(service => (
-                <div class="bg-gray-700 border-l-4 border-brand-yellow p-6 hover:bg-gray-600 transition">
-                  <h3 class="text-2xl font-bold text-brand-yellow mb-3">{service.title}</h3>
-                  <p class="text-gray-300 leading-relaxed">{service.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -64,30 +69,30 @@ import Footer from '../components/Footer.astro';
     <!-- About Us -->
     <section id="about" class="py-16 px-4 bg-gray-700">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold text-brand-yellow text-center mb-4">About Us</h2>
-        <div class="w-24 h-1 bg-brand-yellow mx-auto mb-12"></div>
+        <h2 class="section-header">About Stumpmasters Jax</h2>
+        <div class="section-divider"></div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
           <div>
-            <h3 class="text-2xl font-bold text-white mb-4">Professional Stump Grinding Services</h3>
+            <h3 class="text-2xl font-bold text-white mb-4">Affordable Stump Removal Jacksonville FL - Veteran Owned</h3>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Stumpmasters Jax is Jacksonville's premier stump grinding specialist, proudly serving Duval, St. Johns, and Clay Counties. As a veteran-owned and operated business, we bring military precision and dedication to every project.
+              Stumpmasters Jax is Jacksonville's premier <a href="/services" class="text-brand-yellow hover:underline">stump grinding and tree stump removal</a> specialist, proudly serving <a href="/service-areas" class="text-brand-yellow hover:underline">Duval County, St. Johns County, and Clay County</a>. As a veteran-owned and operated business, we bring military precision and dedication to every stump removal project.
             </p>
             <p class="text-gray-300 leading-relaxed mb-4">
-              We provide professional quotes for both residential and commercial projects of all sizes. Whether you're a homeowner looking to clear your yard or a business managing property maintenance, we have the expertise and equipment to handle your needs.
+              We provide professional quotes for both residential and commercial stump grinding projects of all sizes throughout <a href="/service-areas" class="text-brand-yellow hover:underline">Jacksonville Beach, Atlantic Beach, Neptune Beach, St. Augustine, Ponte Vedra, and Orange Park</a>. Whether you're a homeowner looking to clear your yard or a business managing property maintenance, we have the expertise and equipment to handle your tree stump removal needs.
             </p>
             <p class="text-gray-300 leading-relaxed mb-4">
-              We are fully licensed and insured, providing you with peace of mind while we handle your stump removal needs. Our team uses state-of-the-art equipment and years of experience to deliver exceptional results.
+              We are fully licensed and insured, providing you with peace of mind while we handle your stump grinding and removal needs. Our team uses state-of-the-art equipment and years of experience to deliver exceptional results with competitive, affordable pricing.
             </p>
             <p class="text-gray-300 leading-relaxed mb-4">
-              Whether you need stump grinding, complete removal, or tree trimming services, we offer free same-day estimates over the phone. Contact us today to reclaim your yard space!
+              Whether you need stump grinding, complete tree stump removal, tree trimming (up to 15ft), or tree debris haul away services, we offer free same-day estimates over the phone. <strong class="text-white">Same-day service, next-day service, and weekend scheduling available!</strong> <a href="/contact" class="text-brand-yellow hover:underline">Contact us today</a> to reclaim your yard space!
             </p>
             <p class="text-gray-300 leading-relaxed">
               <strong class="text-brand-yellow">Military & Veteran Discount:</strong> As a veteran-owned business, we're proud to offer <strong class="text-white">10% off</strong> the quoted price for all active military members and veterans. Thank you for your service!
             </p>
           </div>
           <div class="bg-black border-2 border-brand-yellow rounded-lg p-8">
-            <h4 class="text-xl font-bold text-brand-yellow mb-6 text-center">Why Choose Us?</h4>
+            <h3 class="text-xl font-bold text-brand-yellow mb-6 text-center">Why Choose Us?</h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3">
                 <span class="text-brand-yellow text-xl">✓</span>
@@ -95,7 +100,15 @@ import Footer from '../components/Footer.astro';
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-brand-yellow text-xl">✓</span>
-                <span class="text-gray-300"><strong class="text-white">Free Estimates:</strong> Same-day, over-the-phone quotes</span>
+                <span class="text-gray-300"><strong class="text-white">Free Estimates:</strong> Same-day quotes & flexible scheduling</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-yellow text-xl">✓</span>
+                <span class="text-gray-300"><strong class="text-white">Fast Service:</strong> Same-day, next-day & weekend availability</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-yellow text-xl">✓</span>
+                <span class="text-gray-300"><strong class="text-white">No Size Limits:</strong> We handle stumps of any size</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-brand-yellow text-xl">✓</span>
@@ -111,6 +124,190 @@ import Footer from '../components/Footer.astro';
               </li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Service Areas Section -->
+    <section class="py-12 px-4 bg-black border-t-4 border-brand-yellow">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-header">Stump Grinding Service Areas</h2>
+        <div class="section-divider"></div>
+        <p class="text-lg text-gray-300 text-center mb-8 leading-relaxed">
+          Providing professional stump removal and tree services throughout Northeast Florida
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Duval County -->
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Duval County</h3>
+            <ul class="city-list">
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>Jacksonville</span>
+              </li>
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>Jacksonville Beach</span>
+              </li>
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>Atlantic Beach</span>
+              </li>
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>Neptune Beach</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- St. Johns County -->
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">St. Johns County</h3>
+            <ul class="city-list">
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>St. Augustine</span>
+              </li>
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>Ponte Vedra</span>
+              </li>
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>Ponte Vedra Beach</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Clay County -->
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Clay County</h3>
+            <ul class="city-list">
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>Orange Park</span>
+              </li>
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>Middleburg</span>
+              </li>
+              <li class="city-list-item">
+                <span class="city-arrow">→</span>
+                <span>Green Cove Springs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-6 text-center">
+          <p class="text-gray-300 text-base">
+            Looking for <strong class="text-white">affordable stump grinding near me</strong>? We serve all of Northeast Florida with competitive pricing and professional service.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Customer Reviews Section -->
+    <section class="py-16 px-4 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="section-header">What Our Customers Say</h2>
+        <div class="section-divider"></div>
+        
+        <!-- Google Rating Summary -->
+        <div class="text-center mb-12">
+          <div class="flex items-center justify-center gap-3 mb-3">
+            <div class="flex gap-1">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="w-8 h-8 text-brand-yellow fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <span class="text-3xl font-bold text-white">5.0</span>
+          </div>
+          <p class="text-gray-300 text-lg mb-4">Based on 6 Google reviews</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="/reviews"
+              class="btn btn-primary"
+            >
+              Read All Customer Reviews
+            </a>
+            <a 
+              href="https://www.google.com/search?q=stumpmasters+jax" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+              onclick="trackEvent('Click', { category: 'Reviews', label: 'View Google Reviews' })"
+            >
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+              </svg>
+              View on Google
+            </a>
+          </div>
+        </div>
+        
+        <!-- Featured Review Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <!-- Featured Review 1 - Mack O. -->
+          <div class="review-card">
+            <div class="star-rating">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="star-icon" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <p class="review-text">
+              "Stumpmasters Jax did an outstanding job from start to finish. They were fast, courteous, and incredibly professional... It was honestly a breath of fresh air having a U.S. veteran take care of the work."
+            </p>
+            <p class="review-author">- Mack O.</p>
+            <p class="review-date">DEC 2025</p>
+          </div>
+          
+          <!-- Featured Review 2 - Shannon L. -->
+          <div class="review-card">
+            <div class="star-rating">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="star-icon" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <p class="review-text">
+              "I had an amazing experience with this stump removal service! They were fast, professional, and super thorough... They cleaned up the entire area afterward, leaving my yard looking better than before."
+            </p>
+            <p class="review-author">- Shannon L.</p>
+            <p class="review-date">NOV 2025</p>
+          </div>
+          
+          <!-- Featured Review 3 - William V. -->
+          <div class="review-card">
+            <div class="star-rating">
+              {[1, 2, 3, 4, 5].map(() => (
+                <svg class="star-icon" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              ))}
+            </div>
+            <p class="review-text">
+              "Professional and reasonably priced. Was able to fit me in same day and did a fantastic job! Highly recommend."
+            </p>
+            <p class="review-author">- William V.</p>
+            <p class="review-date">DEC 2025</p>
+          </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="text-center">
+          <p class="text-xl text-gray-300 mb-4">
+            Ready to experience 5-star stump grinding service?
+          </p>
+          <p class="text-gray-300">
+            Don't just take our word for it - <a href="/reviews" class="text-brand-yellow hover:underline font-semibold">read what our customers are saying</a> about our professional stump grinding and tree removal services in Jacksonville!
+          </p>
         </div>
       </div>
     </section>
@@ -166,13 +363,13 @@ import Footer from '../components/Footer.astro';
     <!-- Contact Us -->
     <section id="contact" class="py-16 px-4 bg-black">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold text-brand-yellow text-center mb-4">Contact Us</h2>
-        <div class="w-24 h-1 bg-brand-yellow mx-auto mb-12"></div>
+        <h2 class="section-header">Contact Us</h2>
+        <div class="section-divider"></div>
         
         <div class="max-w-4xl mx-auto">
-          <h3 class="text-2xl font-bold text-white mb-8 text-center">Get Your Free Estimate Today</h3>
+          <h3 class="text-2xl font-bold text-white mb-8 text-center">Get Your Free Stump Removal Estimate Today</h3>
           <p class="text-gray-300 mb-12 leading-relaxed text-center">
-            Ready to remove that stump? Contact us for a free, same-day estimate. We serve Jacksonville and surrounding areas including Duval, St. Johns, and Clay Counties.
+            Ready for professional stump grinding or tree stump removal in Jacksonville, FL? Contact us for a free, same-day estimate. We serve all of Duval County, St. Johns County, and Clay County with same-day and next-day service available.
           </p>
           
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -232,25 +429,23 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
           
-          <!-- Social Media Links -->
+          <!-- CTA Buttons -->
           <div class="mt-12 pt-8 border-t border-gray-800">
-            <h4 class="text-xl font-bold text-white mb-6 text-center">Connect With Us</h4>
-            <div class="flex justify-center gap-6">
-              <a href="#" class="bg-brand-yellow p-4 rounded-lg hover:bg-yellow-400 transition transform hover:scale-110" aria-label="Facebook">
-                <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                </svg>
+            <h4 class="text-xl font-bold text-white mb-6 text-center">Ready to Get Started?</h4>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <a 
+                href="tel:+19044082450"
+                class="btn btn-primary"
+                onclick="trackEvent('Click', { category: 'Contact', label: 'Contact Section CTA Phone' })"
+              >
+                📞 Call 904-408-2450
               </a>
-              <a href="#" class="bg-brand-yellow p-4 rounded-lg hover:bg-yellow-400 transition transform hover:scale-110" aria-label="Instagram">
-                <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-              <a href="#" class="bg-brand-yellow p-4 rounded-lg hover:bg-yellow-400 transition transform hover:scale-110" aria-label="Google Business">
-                <svg class="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
-                </svg>
-              </a>
+              <button 
+                data-open-estimate-modal
+                class="btn btn-secondary"
+              >
+                Request Free Estimate
+              </button>
             </div>
           </div>
         </div>
@@ -259,308 +454,7 @@ import Footer from '../components/Footer.astro';
   </main>
   
   <Footer />
-  
-  <!-- Estimate Request Modal -->
-  <div id="estimate-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
-    <div class="bg-gray-700 border-2 border-brand-yellow rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-      <div class="p-6">
-        <div id="modal-header" class="flex justify-between items-center mb-6">
-          <h3 class="text-2xl font-bold text-brand-yellow">Request a Free Estimate</h3>
-          <button id="close-modal" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
-        </div>
-        
-        <p id="modal-description" class="text-gray-300 mb-6">
-          Fill out the form below and we'll contact you back with a free estimate!
-        </p>
-        
-        <form id="estimate-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-          <!-- Name -->
-          <div>
-            <label for="name" class="block text-white font-semibold mb-2">Name *</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              required
-              class="w-full px-4 py-3 bg-black border border-gray-700 rounded text-white focus:border-brand-yellow focus:outline-none"
-              placeholder="First name, last name"
-            />
-          </div>
-          
-          <!-- Address -->
-          <div>
-            <label for="address" class="block text-white font-semibold mb-2">Service Address *</label>
-            <input 
-              type="text" 
-              id="address" 
-              name="address" 
-              required
-              autocomplete="street-address"
-              class="w-full px-4 py-3 bg-black border border-gray-700 rounded text-white focus:border-brand-yellow focus:outline-none"
-              placeholder="Street address, city, state, zip"
-            />
-          </div>
-          
-          <!-- Phone -->
-          <div>
-            <label for="phone" class="block text-white font-semibold mb-2">Phone Number *</label>
-            <input 
-              type="tel" 
-              id="phone" 
-              name="phone" 
-              required
-              pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
-              title="Please match the requested format (e.g., 904-555-1234 or 9045551234)"
-              class="w-full px-4 py-3 bg-black border border-gray-700 rounded text-white focus:border-brand-yellow focus:outline-none"
-              placeholder="904-555-1234"
-            />
-          </div>
-          
-          <!-- Email -->
-          <div>
-            <label for="email" class="block text-white font-semibold mb-2">Email *</label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              required
-              title="Please match the requested format (e.g., yourname@example.com)"
-              class="w-full px-4 py-3 bg-black border border-gray-700 rounded text-white focus:border-brand-yellow focus:outline-none"
-              placeholder="your.email@example.com"
-            />
-          </div>
-          
-          <!-- Job Description -->
-          <div>
-            <label for="description" class="block text-white font-semibold mb-2">Job Description *</label>
-            <textarea 
-              id="description" 
-              name="description" 
-              required
-              rows="5"
-              class="w-full px-4 py-3 bg-black border border-gray-700 rounded text-white focus:border-brand-yellow focus:outline-none resize-vertical scrollbar-thin scrollbar-thumb-brand-yellow scrollbar-track-gray-800"
-              placeholder="Please describe the stump grinding or tree service you need. Include details like number of stumps, approximate size, and any special considerations."
-            ></textarea>
-          </div>
-          
-          <!-- Contact Preference -->
-          <div>
-            <label class="block text-white font-semibold mb-3">How do you prefer to be contacted? *</label>
-            <div class="flex flex-wrap gap-4">
-              <label class="flex items-center gap-2 cursor-pointer group">
-                <input 
-                  type="radio" 
-                  name="contact_preference" 
-                  value="Text"
-                  required
-                  class="w-5 h-5 bg-black border-2 border-gray-600 text-brand-yellow focus:ring-2 focus:ring-brand-yellow checked:bg-brand-yellow checked:border-brand-yellow"
-                />
-                <span class="text-gray-300 group-hover:text-white transition">Text</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer group">
-                <input 
-                  type="radio" 
-                  name="contact_preference" 
-                  value="Call"
-                  required
-                  class="w-5 h-5 bg-black border-2 border-gray-600 text-brand-yellow focus:ring-2 focus:ring-brand-yellow checked:bg-brand-yellow checked:border-brand-yellow"
-                />
-                <span class="text-gray-300 group-hover:text-white transition">Call</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer group">
-                <input 
-                  type="radio" 
-                  name="contact_preference" 
-                  value="Email"
-                  required
-                  class="w-5 h-5 bg-black border-2 border-gray-600 text-brand-yellow focus:ring-2 focus:ring-brand-yellow checked:bg-brand-yellow checked:border-brand-yellow"
-                />
-                <span class="text-gray-300 group-hover:text-white transition">Email</span>
-              </label>
-              <label class="flex items-center gap-2 cursor-pointer group">
-                <input 
-                  type="radio" 
-                  name="contact_preference" 
-                  value="Any"
-                  required
-                  class="w-5 h-5 bg-black border-2 border-gray-600 text-brand-yellow focus:ring-2 focus:ring-brand-yellow checked:bg-brand-yellow checked:border-brand-yellow"
-                />
-                <span class="text-gray-300 group-hover:text-white transition">Any</span>
-              </label>
-            </div>
-          </div>
-          
-          <!-- Web3Forms Configuration -->
-          <input type="hidden" name="access_key" value="5225be27-8091-4720-85d5-36e4badcea83" />
-          <input type="hidden" id="form-subject" name="subject" value="New Estimate Request" />
-          <input type="hidden" name="from_name" value="StumpMasters Jax Website" />
-          <input type="hidden" name="redirect" value="false" />
-          
-          <!-- Privacy Disclaimer -->
-          <div class="pt-4 pb-2 border-t border-gray-700">
-            <p class="text-xs text-gray-400 leading-relaxed">
-              <strong class="text-gray-300">Privacy Notice:</strong> By submitting this form, you authorize Stumpmasters Jax to contact you via phone, text, or email regarding the services described above. We respect your privacy and will only use your information to provide you with an estimate and related services. We do not sell, share, or store your personal data beyond what is necessary to fulfill your service request.
-            </p>
-          </div>
-          
-          <!-- Form Actions -->
-          <div class="flex gap-4 pt-2">
-            <button 
-              type="submit"
-              class="flex-1 px-6 py-3 bg-brand-yellow text-black font-bold rounded hover:bg-yellow-400 transition"
-            >
-              Submit Request
-            </button>
-            <button 
-              type="button"
-              id="cancel-modal"
-              class="px-6 py-3 bg-gray-700 text-white font-bold rounded hover:bg-gray-600 transition"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-        
-        <!-- Success Message (hidden by default) -->
-        <div id="success-message" class="hidden mt-6 p-8 bg-black border-4 border-brand-yellow rounded-lg shadow-2xl">
-          <div class="text-center">
-            <div class="inline-block p-4 bg-brand-yellow rounded-full mb-4">
-              <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            <h4 class="text-3xl font-bold text-brand-yellow mb-3">Quote Submitted Successfully!</h4>
-            <div class="w-24 h-1 bg-brand-yellow mx-auto mb-4"></div>
-            <p class="text-white text-lg leading-relaxed">
-              Thank you for your request. We've received your information and will be reaching out to you shortly with your free estimate. We look forward to serving you!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Estimate Modal Script -->
-  <script>
-    // Modal elements
-    const modal = document.getElementById('estimate-modal');
-    const openBtn = document.getElementById('open-estimate-modal');
-    const closeBtn = document.getElementById('close-modal');
-    const cancelBtn = document.getElementById('cancel-modal');
-    const form = document.getElementById('estimate-form');
-    const successMessage = document.getElementById('success-message');
-    const modalHeader = document.getElementById('modal-header');
-    const modalDescription = document.getElementById('modal-description');
-    
-    // Open modal
-    openBtn?.addEventListener('click', () => {
-      modal?.classList.remove('hidden');
-      document.body.style.overflow = 'hidden'; // Prevent background scroll
-    });
-    
-    // Close modal function
-    function closeModal() {
-      modal?.classList.add('hidden');
-      document.body.style.overflow = ''; // Restore scroll
-      form?.reset();
-      successMessage?.classList.add('hidden');
-      // Show header and description again
-      modalHeader?.classList.remove('hidden');
-      modalDescription?.classList.remove('hidden');
-    }
-    
-    // Close button
-    closeBtn?.addEventListener('click', closeModal);
-    
-    // Cancel button
-    cancelBtn?.addEventListener('click', closeModal);
-    
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal?.classList.contains('hidden')) {
-        closeModal();
-      }
-    });
-    
-    // Handle form submission
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      // Check if form is valid using HTML5 validation
-      if (!form.checkValidity()) {
-        // Show validation messages without closing modal
-        form.reportValidity();
-        return;
-      }
-      
-      // Update subject line with actual customer data
-      const nameField = document.getElementById('name');
-      const addressField = document.getElementById('address');
-      const subjectField = document.getElementById('form-subject');
-      
-      if (nameField && addressField && subjectField) {
-        const customerName = nameField.value;
-        const customerAddress = addressField.value;
-        subjectField.value = `New Estimate Request - ${customerName} / ${customerAddress}`;
-      }
-      
-      const formData = new FormData(form);
-      
-      // Show loading state
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn?.textContent;
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-      }
-      
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        
-        if (response.ok) {
-          form.classList.add('hidden');
-          successMessage?.classList.remove('hidden');
-          // Hide header and description when showing success
-          modalHeader?.classList.add('hidden');
-          modalDescription?.classList.add('hidden');
-          
-          // Track event
-          if (typeof trackEvent !== 'undefined') {
-            trackEvent('Submit', { category: 'Form', label: 'Estimate Request' });
-          }
-          
-          // Auto-close after 12 seconds
-          setTimeout(() => {
-            closeModal();
-            form.classList.remove('hidden');
-            if (submitBtn) {
-              submitBtn.disabled = false;
-              submitBtn.textContent = originalText;
-            }
-          }, 12000);
-        } else {
-          alert('There was a problem submitting your request. Please call us at 904-408-2450.');
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
-          }
-        }
-      } catch (error) {
-        alert('There was a problem submitting your request. Please call us at 904-408-2450.');
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalText;
-        }
-      }
-    });
-  </script>
+  <EstimateModal />
   
   <!-- Carousel Script -->
   <script>

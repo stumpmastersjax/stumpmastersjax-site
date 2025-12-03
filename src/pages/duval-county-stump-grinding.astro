@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'Duval County Stump Grinding FL | Tree Removal Services | Stumpmasters Jax';
+const description = 'Professional stump grinding and tree removal throughout Duval County, FL. Serving Jacksonville, Jacksonville Beach, Atlantic Beach, Neptune Beach. Same-day service. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Service Areas', url: '/service-areas' },
+    { label: 'Duval County' }
+  ]} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+      <div class="container-standard text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow mb-4">
+          Duval County Stump Grinding & Tree Removal
+        </h1>
+        <div class="section-divider"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+          Professional stump grinding and tree removal services throughout Duval County, Florida. Veteran-owned, licensed & insured with same-day service available.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/contact" class="btn btn-secondary">
+            Get Free Estimate
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Serving All of Duval County</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-2-col mb-12">
+          <div>
+            <h3 class="subsection-header">Duval County's Trusted Stump Grinding Service</h3>
+            <p class="text-body">
+              Stumpmasters Jax proudly serves all of Duval County with professional stump grinding and tree removal services. As a veteran-owned, locally-operated business, we understand the unique needs of Duval County properties, from historic neighborhoods to modern developments.
+            </p>
+            <p class="text-body">
+              Duval County is home to Jacksonville, Florida's largest city by area, along with beautiful beach communities like Jacksonville Beach, Atlantic Beach, and Neptune Beach. We serve every corner of the county with the same dedication and professionalism.
+            </p>
+            <p class="text-body">
+              Whether you're in urban Jacksonville, the coastal beaches, or suburban neighborhoods, we offer same-day and next-day stump grinding service throughout Duval County.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Duval County Service Highlights</h3>
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Same-day service available</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">All Duval County cities covered</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Veteran-owned & operated</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Licensed & insured in Duval County</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">Free estimates</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body">10% military discount</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cities & Neighborhoods -->
+    <section class="section bg-black">
+      <div class="container-standard">
+        <h2 class="section-header">Duval County Cities & Neighborhoods We Serve</h2>
+        <div class="section-divider"></div>
+        <p class="section-intro">
+          Professional stump grinding throughout all Duval County communities
+        </p>
+        
+        <div class="grid-3-col mb-12">
+          <!-- Jacksonville -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Jacksonville</h3>
+            <p class="text-body text-small mb-4">
+              Serving all Jacksonville neighborhoods with professional stump grinding and tree removal services.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Downtown Jacksonville</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Riverside & Avondale</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>San Marco & San Jose</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Mandarin</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Southside & Baymeadows</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Arlington</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Northside</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Westside</span></li>
+            </ul>
+            <div class="mt-4">
+              <a href="/jacksonville-stump-grinding" class="text-brand-yellow hover:underline font-semibold">
+                Learn more about Jacksonville stump grinding →
+              </a>
+            </div>
+          </div>
+
+          <!-- Jacksonville Beach -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Jacksonville Beach</h3>
+            <p class="text-body text-small mb-4">
+              Coastal property specialists serving Jacksonville Beach and surrounding beach communities.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Beaches Town Center</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Pablo Historical Park</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>South Jax Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Oceanfront properties</span></li>
+            </ul>
+            <div class="mt-4">
+              <a href="/jacksonville-beach-stump-grinding" class="text-brand-yellow hover:underline font-semibold">
+                Learn more about Jacksonville Beach services →
+              </a>
+            </div>
+          </div>
+
+          <!-- Atlantic Beach -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Atlantic Beach</h3>
+            <p class="text-body text-small mb-4">
+              Expert stump removal for Atlantic Beach properties, from beachfront to inland neighborhoods.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Atlantic Beach proper</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Seminole Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Mayport area</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Beachfront homes</span></li>
+            </ul>
+          </div>
+
+          <!-- Neptune Beach -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Neptune Beach</h3>
+            <p class="text-body text-small mb-4">
+              Professional tree services for Neptune Beach residential and commercial properties.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Neptune Beach residential</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Jarboe Park area</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Atlantic Blvd corridor</span></li>
+            </ul>
+          </div>
+
+          <!-- Baldwin -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Baldwin</h3>
+            <p class="text-body text-small mb-4">
+              Serving Baldwin and western Duval County with reliable stump grinding services.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Baldwin proper</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Rural Duval County</span></li>
+            </ul>
+          </div>
+
+          <!-- Other Areas -->
+          <div class="card">
+            <h3 class="subsection-header-yellow">Additional Areas</h3>
+            <p class="text-body text-small mb-4">
+              We serve all unincorporated areas and communities throughout Duval County.
+            </p>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Ortega</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Cedar Hills</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Regency</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Deerwood</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Our Duval County Services</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-3-col">
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Stump Grinding</h3>
+            <p class="text-body text-small">
+              Professional stump grinding services throughout Duval County. We remove stumps below ground level, preparing your property for landscaping or construction.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Tree Trimming</h3>
+            <p class="text-body text-small">
+              Expert tree trimming and pruning services up to 15 feet. Keep your Duval County property safe and beautiful with professional tree maintenance.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Debris Removal</h3>
+            <p class="text-body text-small">
+              Complete tree debris haul away services. We clean up after stump grinding, tree trimming, or storm damage throughout Duval County.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-black">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Professional Stump Grinding Throughout Duval County
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Same-day service available! Get your free estimate for Duval County stump grinding today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <a href="/contact" class="btn btn-secondary">
+            Request Free Estimate
+          </a>
+        </div>
+        <p class="text-gray-300 mt-6">
+          <span class="text-brand-yellow font-semibold">Serving All of Duval County</span> • Licensed & Insured • Same-Day Service
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

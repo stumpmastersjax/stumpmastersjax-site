@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EstimateModal from '../components/EstimateModal.astro';
+
+const title = 'About Us - Veteran-Owned Stump Grinding Jacksonville FL | Stumpmasters Jax';
+const description = 'Learn about Stumpmasters Jax - Jacksonville\'s veteran-owned stump grinding and tree removal service. Licensed, insured, and dedicated to exceptional service. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'About' }
+  ]} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+      <div class="container-standard text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow mb-4">
+          About Stumpmasters Jax
+        </h1>
+        <div class="section-divider"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Jacksonville's premier veteran-owned stump grinding and tree removal service. Bringing military precision and dedication to every project since day one.
+        </p>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <div class="grid-2-col items-center mb-12">
+          <div>
+            <h2 class="text-4xl font-bold text-brand-yellow mb-6">Affordable Stump Removal Jacksonville FL - Veteran Owned</h2>
+            <p class="text-body">
+              Stumpmasters Jax is Jacksonville's premier <a href="/services" class="text-brand-yellow hover:underline">stump grinding and tree stump removal</a> specialist, proudly serving <a href="/service-areas" class="text-brand-yellow hover:underline">Duval County, St. Johns County, and Clay County</a>. As a veteran-owned and operated business, we bring military precision and dedication to every stump removal project.
+            </p>
+            <p class="text-body">
+              We provide professional quotes for both residential and commercial stump grinding projects of all sizes throughout <a href="/service-areas" class="text-brand-yellow hover:underline">Jacksonville Beach, Atlantic Beach, Neptune Beach, St. Augustine, Ponte Vedra, and Orange Park</a>. Whether you're a homeowner looking to clear your yard or a business managing property maintenance, we have the expertise and equipment to handle your tree stump removal needs.
+            </p>
+            <p class="text-body">
+              We are fully licensed and insured, providing you with peace of mind while we handle your stump grinding and removal needs. Our team uses state-of-the-art equipment and years of experience to deliver exceptional results with competitive, affordable pricing.
+            </p>
+            <p class="text-body">
+              Whether you need stump grinding, complete tree stump removal, tree trimming (up to 15ft), or tree debris haul away services, we offer free same-day estimates over the phone. <span class="text-emphasis">Same-day service, next-day service, and weekend scheduling available!</span> <a href="/contact" class="text-brand-yellow hover:underline">Contact us today</a> to reclaim your yard space!
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow text-center mb-6">Why Choose Us?</h3>
+            <ul class="feature-list">
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body"><span class="text-emphasis">Licensed & Insured:</span> Fully certified for your protection</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body"><span class="text-emphasis">Free Estimates:</span> Same-day quotes & flexible scheduling</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body"><span class="text-emphasis">Same-Day Service:</span> Fast response when you need it</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body"><span class="text-emphasis">Professional Equipment:</span> State-of-the-art stump grinders</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body"><span class="text-emphasis">Competitive Pricing:</span> Affordable rates, no hidden fees</span>
+              </li>
+              <li class="feature-list-item">
+                <span class="feature-icon">✓</span>
+                <span class="text-body"><span class="text-emphasis">Veteran-Owned:</span> Military precision and dedication</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Veteran Owned -->
+    <section class="section bg-black">
+      <div class="container-standard">
+        <h2 class="section-header">Proudly Veteran-Owned</h2>
+        <div class="section-divider"></div>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="card mb-8">
+            <h3 class="subsection-header-yellow">Military Values, Civilian Service</h3>
+            <p class="text-body">
+              As a veteran-owned business, Stumpmasters Jax operates with the same values learned in military service: integrity, dedication, precision, and commitment to excellence. We understand the importance of showing up on time, doing the job right the first time, and treating every customer's property with respect.
+            </p>
+            <p class="text-body">
+              Our military background means we approach every stump grinding project with careful planning, attention to detail, and a focus on safety. We don't cut corners, and we don't leave a job until it's done to the highest standards.
+            </p>
+          </div>
+          
+          <div class="card bg-gray-800 border-2 border-brand-yellow">
+            <h3 class="subsection-header-yellow text-center">Military & Veteran Discount</h3>
+            <p class="text-body text-center">
+              <span class="text-brand-yellow text-2xl font-bold">10% OFF</span>
+            </p>
+            <p class="text-body text-center">
+              As a veteran-owned business, we're proud to offer <span class="text-emphasis">10% off</span> the quoted price for all active military members and veterans. Thank you for your service!
+            </p>
+            <p class="text-body text-center text-small mt-4">
+              Just mention your military status when you call for your free estimate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Commitment -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Our Commitment to Jacksonville</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-2-col">
+          <div class="card">
+            <h3 class="subsection-header-yellow">Quality Service</h3>
+            <p class="text-body">
+              We're committed to providing the highest quality stump grinding and tree removal services in Jacksonville. Every project receives our full attention, from the initial estimate to the final cleanup. We use professional-grade equipment and proven techniques to ensure exceptional results.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Customer Satisfaction</h3>
+            <p class="text-body">
+              Your satisfaction is our top priority. We're not satisfied until you're completely happy with our work. Our 5-star rating on Google reflects our commitment to exceeding customer expectations on every job. <a href="/reviews" class="text-brand-yellow hover:underline">Read what our customers say</a>.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Environmental Responsibility</h3>
+            <p class="text-body">
+              We practice environmentally responsible tree care. Wood chips from stump grinding can be left as natural mulch for your landscaping, or we can haul them away for eco-friendly disposal. We minimize our environmental impact while maximizing results.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Community Focus</h3>
+            <p class="text-body">
+              As a local Jacksonville business, we're invested in our community. We live here, work here, and care about maintaining the beauty and safety of Northeast Florida properties. When you choose Stumpmasters Jax, you're supporting a local veteran-owned business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications & Insurance -->
+    <section class="section bg-black">
+      <div class="container-narrow">
+        <h2 class="section-header">Licensed, Insured & Professional</h2>
+        <div class="section-divider"></div>
+        
+        <div class="card">
+          <h3 class="subsection-header-yellow">Fully Licensed & Insured</h3>
+          <p class="text-body">
+            Stumpmasters Jax is fully licensed and insured for all stump grinding and tree removal services in Jacksonville, FL and surrounding areas. We carry comprehensive liability insurance to protect your property and give you peace of mind.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-gray-700">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Experience the Stumpmasters Jax Difference
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Veteran-owned, locally operated, and dedicated to your satisfaction. Get your free estimate today!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <button data-open-estimate-modal class="btn btn-secondary">
+            Request Free Estimate
+          </button>
+        </div>
+        <p class="text-gray-300 mt-6">
+          <span class="text-brand-yellow font-semibold">Serving Jacksonville Since Day One</span> • Licensed & Insured • 5-Star Rated
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  <EstimateModal />
+</BaseLayout>

@@ -1,0 +1,292 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EstimateModal from '../components/EstimateModal.astro';
+
+const title = 'Tree Services Jacksonville FL | Stump Grinding & Removal | Stumpmasters Jax';
+const description = 'Professional tree services in Jacksonville, FL. Stump grinding, tree removal, trimming, and debris haul away. Veteran-owned, licensed & insured. Same-day service. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Services' }
+  ]} />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+      <div class="container-standard text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow mb-4">
+          Professional Tree Services in Jacksonville, FL
+        </h1>
+        <div class="section-divider"></div>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+          Comprehensive stump grinding, tree removal, and tree care services throughout Northeast Florida. Veteran-owned, licensed & insured with same-day service available.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <button data-open-estimate-modal class="btn btn-secondary">
+            Get Free Estimate
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Our Tree Services</h2>
+        <div class="section-divider"></div>
+        <p class="section-intro">
+          Professional tree care services for residential and commercial properties throughout Jacksonville, Duval County, St. Johns County, and Clay County
+        </p>
+        
+        <!-- Stump Grinding - Full Width -->
+        <div class="mb-8">
+          <div class="card">
+            <h3 class="text-3xl font-bold text-brand-yellow mb-4">Stump Grinding & Removal</h3>
+            <p class="text-body">
+              Professional stump grinding services in Jacksonville, FL. We remove tree stumps below ground level (typically 6-12 inches deep) for both residential and commercial properties. Our state-of-the-art stump grinding equipment can handle stumps of any size.
+            </p>
+            <h4 class="subsection-header-yellow mt-4 mb-2">What We Offer:</h4>
+            <ul class="space-y-1">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Stumps of all sizes - no job too large or small</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Below-ground grinding (6-12 inches deep)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Complete stump removal option available</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Wood chip removal or leave as mulch</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Same-day service available</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Minimal yard disruption</span>
+              </li>
+            </ul>
+            <div class="mt-6">
+              <a href="/jacksonville-stump-grinding" class="text-brand-yellow hover:underline font-semibold">
+                Learn more about stump grinding in Jacksonville →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tree Trimming & Debris - Two Columns -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <!-- Tree Trimming -->
+          <div class="card">
+            <h3 class="text-3xl font-bold text-brand-yellow mb-4">Tree Trimming & Pruning</h3>
+            <p class="text-body">
+              Expert tree trimming services up to 15 feet for properties throughout Jacksonville Beach, Atlantic Beach, Neptune Beach, and surrounding areas. Keep your trees healthy and your property safe with our professional tree maintenance services.
+            </p>
+            <h4 class="subsection-header-yellow mt-4 mb-2">Services Include:</h4>
+            <ul class="space-y-1">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Tree trimming up to 15 feet</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Pruning for tree health</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Deadwood removal</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Crown thinning and shaping</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Safety hazard removal</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Complete cleanup included</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tree Debris Haul Away -->
+          <div class="card">
+            <h3 class="text-3xl font-bold text-brand-yellow mb-4">Tree Debris Haul Away</h3>
+            <p class="text-body">
+              Complete tree debris removal and haul away services in Jacksonville, FL. We handle cleanup after stump grinding, tree trimming, or storm damage. Same-day and next-day service available throughout Northeast Florida.
+            </p>
+            <h4 class="subsection-header-yellow mt-4 mb-2">Debris Services:</h4>
+            <ul class="space-y-1">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Wood chip removal</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Branch and limb hauling</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Storm damage cleanup</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Complete yard cleanup</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Eco-friendly disposal</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Leave your property pristine</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="section bg-black">
+      <div class="container-standard">
+        <h2 class="section-header">Areas We Serve</h2>
+        <div class="section-divider"></div>
+        <p class="section-intro">
+          Professional tree services throughout Northeast Florida
+        </p>
+        
+        <div class="grid-3-col mb-8">
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Duval County</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Jacksonville</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Jacksonville Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Atlantic Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Neptune Beach</span></li>
+            </ul>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">St. Johns County</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>St. Augustine</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Ponte Vedra</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Ponte Vedra Beach</span></li>
+            </ul>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">Clay County</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Orange Park</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Middleburg</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Green Cove Springs</span></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <a href="/service-areas" class="btn btn-primary">
+            View All Service Areas
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h2 class="section-header">Why Choose Stumpmasters Jax?</h2>
+        <div class="section-divider"></div>
+        
+        <div class="grid-2-col">
+          <div class="card">
+            <h3 class="subsection-header-yellow">Veteran-Owned & Operated</h3>
+            <p class="text-body">
+              As a veteran-owned business, we bring military precision and dedication to every tree service project. We're proud to offer a 10% discount to all active military members and veterans.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Licensed & Insured</h3>
+            <p class="text-body">
+              Fully licensed and insured for all tree services in Jacksonville, FL and surrounding areas. We carry comprehensive liability insurance to protect your property.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Same-Day Service</h3>
+            <p class="text-body">
+              We offer same-day and next-day service throughout Jacksonville and surrounding areas. Fast, professional service that respects your time and property.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Free Estimates</h3>
+            <p class="text-body">
+              Get your free estimate over the phone - just call and describe your project. No hidden fees, no surprises. Transparent, competitive pricing.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">5-Star Rated</h3>
+            <p class="text-body">
+              Rated 5 stars on Google with dozens of satisfied customers. <a href="/reviews" class="text-brand-yellow hover:underline">Read our reviews</a> to see why Jacksonville trusts Stumpmasters Jax.
+            </p>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Professional Equipment</h3>
+            <p class="text-body">
+              State-of-the-art stump grinding and tree service equipment. We invest in the best tools to deliver exceptional results efficiently and safely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-black">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Ready for Professional Tree Services?
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Get your free estimate today! Same-day service available throughout Jacksonville and Northeast Florida.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <button data-open-estimate-modal class="btn btn-secondary">
+            Request Free Estimate
+          </button>
+        </div>
+        <p class="text-gray-300 mt-6">
+          <span class="text-brand-yellow font-semibold">Veteran-Owned</span> • Licensed & Insured • 5-Star Rated • Same-Day Service
+        </p>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  <EstimateModal />
+</BaseLayout>
