@@ -17,6 +17,7 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImage = new URL(image, Astro.site);
+const thumbnailImage = new URL('/images/stumpmastersjax.thumbnail.png', Astro.site);
 
 // Analytics IDs - replace with actual IDs when available
 const GA4_ID = 'G-XXXXXXXXXX'; // Replace with your GA4 Measurement ID
@@ -48,14 +49,14 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={socialImage} />
+    <meta property="og:image" content={thumbnailImage} />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={socialImage} />
+    <meta property="twitter:image" content={thumbnailImage} />
     
     <!-- Umami Analytics - Production Only -->
     {import.meta.env.PROD && (
@@ -70,7 +71,7 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
       "name": "Stump Masters Jax",
       "alternateName": "Stumpmasters Jacksonville",
       "image": socialImage.toString(),
-      "logo": `${Astro.site}images/logo.png`,
+      "logo": `${Astro.site}images/stumpmastersjax.thumbnail.png`,
       "description": "Professional stump grinding, tree stump removal, tree trimming, and debris haul away services in Jacksonville, FL. Veteran-owned and operated serving Duval County, St. Johns County, and Clay County.",
       "url": Astro.site?.toString(),
       "telephone": "+19044082450",
