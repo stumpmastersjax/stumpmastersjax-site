@@ -28,8 +28,8 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="canonical" href={canonicalURL} />
     
     <title>{title}</title>
@@ -49,6 +49,11 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={socialImage} />
+    
+    <!-- Umami Analytics - Production Only -->
+    {import.meta.env.PROD && (
+      <script defer src="https://cloud.umami.is/script.js" data-website-id="e79488e6-db7a-416e-958e-e03937016203"></script>
+    )}
     
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -299,60 +304,72 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
   <body class="min-h-screen flex flex-col">
     <slot />
     
-    <!-- Consent Banner -->
-    <div id="consent-banner" class="hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-brand-yellow p-4 z-50">
-      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-sm text-white">
-          We use cookies and analytics to improve your experience. 
-        </p>
-        <div class="flex gap-3">
-          <button id="consent-accept" class="px-4 py-2 bg-brand-yellow text-black font-semibold rounded hover:bg-yellow-400 transition">
-            Accept
-          </button>
-          <button id="consent-decline" class="px-4 py-2 bg-gray-700 text-white font-semibold rounded hover:bg-gray-600 transition">
-            Decline
-          </button>
-        </div>
-      </div>
-    </div>
-    
     <script is:inline>
-      // Consent management
-      (function() {
-        const banner = document.getElementById('consent-banner');
-        const acceptBtn = document.getElementById('consent-accept');
-        const declineBtn = document.getElementById('consent-decline');
-        
-        // Show banner if no consent decision made
-        if (!localStorage.getItem('analytics-consent')) {
-          banner?.classList.remove('hidden');
+      // Umami Event Tracking - Production Only
+      window.trackEvent = function(eventName, eventData = {}) {
+        // Only track in production and if umami is available
+        if (typeof umami !== 'undefined') {
+          umami.track(eventName, eventData);
         }
         
-        acceptBtn?.addEventListener('click', () => {
-          localStorage.setItem('analytics-consent', 'true');
-          banner?.classList.add('hidden');
-          window.location.reload(); // Reload to load analytics
-        });
+        // Legacy GA4 tracking (if still needed)
+        if (typeof gtag !== 'undefined') {
+          gtag('event', eventName, eventData);
+        }
         
-        declineBtn?.addEventListener('click', () => {
-          localStorage.setItem('analytics-consent', 'false');
-          banner?.classList.add('hidden');
-        });
-      })();
-      
-      // Track events helper
-      window.trackEvent = function(eventName, eventData = {}) {
-        if (localStorage.getItem('analytics-consent') === 'true') {
-          // GA4
-          if (typeof gtag !== 'undefined') {
-            gtag('event', eventName, eventData);
-          }
-          // Meta Pixel
-          if (typeof fbq !== 'undefined') {
-            fbq('track', eventName, eventData);
-          }
+        // Legacy Meta Pixel tracking (if still needed)
+        if (typeof fbq !== 'undefined') {
+          fbq('track', eventName, eventData);
         }
       };
+      
+      // Auto-track phone call clicks
+      document.addEventListener('DOMContentLoaded', function() {
+        // Track phone number clicks
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        phoneLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            const phoneNumber = this.getAttribute('href').replace('tel:', '');
+            trackEvent('call_click', { 
+              phone: phoneNumber,
+              location: window.location.pathname 
+            });
+          });
+        });
+        
+        // Track primary CTA buttons
+        const ctaButtons = document.querySelectorAll('a[data-open-estimate-modal], button[data-open-estimate-modal]');
+        ctaButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            trackEvent('cta_click', { 
+              type: 'estimate_modal',
+              location: window.location.pathname 
+            });
+          });
+        });
+        
+        // Track form submissions (if contact form exists)
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+          form.addEventListener('submit', function() {
+            trackEvent('form_submit', { 
+              form: this.id || 'contact_form',
+              location: window.location.pathname 
+            });
+          });
+        });
+        
+        // Track outbound links
+        const outboundLinks = document.querySelectorAll('a[href^="http"]:not([href*="stumpmastersjax.com"])');
+        outboundLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            trackEvent('outbound_click', { 
+              url: this.getAttribute('href'),
+              location: window.location.pathname 
+            });
+          });
+        });
+      });
     </script>
   </body>
 </html>
