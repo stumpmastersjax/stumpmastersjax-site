@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EstimateModal from '../../components/EstimateModal.astro';
+
+const title = 'St. Johns County Tree Services | Stump Grinding St. Augustine | Stump Masters Jax';
+const description = 'Professional tree services in St. Johns County, FL. Stump grinding, tree trimming, and debris removal in St. Augustine, Ponte Vedra, and surrounding areas. Veteran-owned, licensed & insured. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Service Areas', url: '/service-areas' },
+    { label: 'St. Johns County' }
+  ]} />
+  
+  <main>
+    <!-- St. Johns County Services -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow text-center mb-8">
+          Stump Grinding Services in St. Johns County, FL
+        </h1>
+        
+        <!-- County Overview -->
+        <div class="grid-2-col mb-12">
+          <div class="card">
+            <h2 class="text-2xl font-bold text-brand-yellow mb-4">Services Available:</h2>
+            <p class="text-body mb-4">
+              Professional tree services throughout St. Johns County, including St. Augustine, Ponte Vedra, and surrounding communities. We offer stump grinding, tree trimming, and debris removal with prompt service.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Stump grinding & removal</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Tree trimming & pruning (up to 15 feet)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Tree debris haul away</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Storm damage cleanup</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Complete yard cleanup</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Same-day service available</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h2 class="text-2xl font-bold text-brand-yellow mb-4">Why Choose Stump Masters Jax:</h2>
+            <p class="text-body mb-4">
+              Veteran-owned and operated tree service company serving St. Johns County with professional equipment and experienced technicians. We deliver superior results with competitive pricing.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Veteran-owned and operated</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Fully licensed and insured</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">State-of-the-art equipment</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Local St. Johns County experience</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Competitive, affordable pricing</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Free estimates over the phone</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cities & Neighborhoods -->
+        <h2 class="text-3xl font-bold text-brand-yellow text-center mb-8">Cities & Communities We Serve</h2>
+        <div class="grid-2-col mb-12">
+          <div class="card">
+            <h3 class="subsection-header-yellow">St. Augustine Areas</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>St. Augustine</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>St. Augustine Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Historic Downtown</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Lincolnville</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>West Augustine</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>North City</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Vilano Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Crescent Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Butler Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Summer Haven</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Marineland</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>World Golf Village</span></li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h3 class="subsection-header-yellow">Ponte Vedra & Northern Areas</h3>
+            <ul class="city-list">
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Ponte Vedra Beach</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Ponte Vedra</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Nocatee</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Sawgrass</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Palm Valley</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Julington Creek</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Fruit Cove</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Hastings</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Elkton</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Spuds</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Veterans Village</span></li>
+              <li class="city-list-item"><span class="city-arrow">→</span><span>Sampson</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service Links -->
+        <div class="text-center mb-12">
+          <p class="text-gray-300 mb-4">
+            Learn more about our professional tree services
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/services/stump-grinding" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              <span class="text-sm">Stump Grinding</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="/services/tree-trimming" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              <span class="text-sm">Tree Trimming</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="/services/debris-haul-away" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              <span class="text-sm">Debris Removal</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-black">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Get Your Free Stump Grinding Service Estimate!
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Same-day service available throughout St. Augustine and St. Johns County. Veteran-owned, licensed & insured.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <button data-open-estimate-modal class="btn btn-secondary">
+            Request Free Estimate
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  <EstimateModal />
+</BaseLayout>

@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EstimateModal from '../../components/EstimateModal.astro';
+
+const title = 'Tree Debris Haul Away Jacksonville FL | Cleanup Services | Stump Masters Jax';
+const description = 'Complete tree debris removal and haul away services in Jacksonville, FL. Brush removal, storm cleanup. Veteran-owned, licensed & insured. Same-day service. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Services', url: '/services' },
+    { label: 'Tree Debris Haul Away' }
+  ]} />
+  
+  <main>
+    <!-- Tree Debris Haul Away Services -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow text-center mb-8">
+          Tree Debris Haul Away in Jacksonville, FL
+        </h1>
+        
+        <!-- Service Overview -->
+        <div class="grid-2-col mb-12">
+          <div class="card">
+            <h2 class="text-2xl font-bold text-brand-yellow mb-4">Debris Services:</h2>
+            <p class="text-body mb-4">
+              Complete tree debris removal and haul away services in Jacksonville, FL. We handle cleanup after stump grinding, tree trimming, or storm damage with eco-friendly disposal.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Brush removal</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Branch and limb hauling</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Storm damage cleanup</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Complete yard cleanup</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Eco-friendly disposal</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Leave your property pristine</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h2 class="text-2xl font-bold text-brand-yellow mb-4">Why Professional Cleanup Matters:</h2>
+            <p class="text-body mb-4">
+              Proper debris removal is essential for property maintenance, safety, and aesthetics. Our professional cleanup services ensure your property remains safe and beautiful after tree work.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Prevents pest infestations</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Eliminates fire hazards</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Improves property appearance</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Complies with local regulations</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Protects landscape investments</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Saves you time and effort</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Process -->
+        <h2 class="text-3xl font-bold text-brand-yellow text-center mb-8">Our Debris Removal Process</h2>
+        <div class="grid-3-col mb-12">
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">1. Assessment & Quote</h3>
+            <p class="text-body text-small">
+              We evaluate the debris type and volume to provide an accurate quote and determine the best removal approach.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">2. Efficient Collection</h3>
+            <p class="text-body text-small">
+              Our team systematically collects and loads all tree debris using appropriate equipment for safe handling.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">3. Eco-Friendly Disposal</h3>
+            <p class="text-body text-small">
+              We transport debris to proper disposal facilities, recycling when possible and following environmental guidelines.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service Areas Link -->
+        <div class="text-center mb-12">
+          <p class="text-gray-300 mb-4">
+            Serving Jacksonville and surrounding areas throughout Northeast Florida
+          </p>
+          <a href="/service-areas" class="btn btn-primary">
+            View All Service Areas →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-black">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Leave the Cleanup to Us!
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Professional debris removal services from a veteran-owned company.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <button data-open-estimate-modal class="btn btn-secondary">
+            Request Free Estimate
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  <EstimateModal />
+</BaseLayout>

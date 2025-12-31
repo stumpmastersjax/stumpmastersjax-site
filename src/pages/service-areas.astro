@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EstimateModal from '../components/EstimateModal.astro';
 
-const title = 'Service Areas - Stump Grinding Jacksonville FL | Stump Masters Jax';
-const description = 'Professional stump grinding and tree removal serving Jacksonville, Duval County, St. Johns County, and Clay County. Same-day service available in all areas. Call 904-408-2450';
+const title = 'Service Areas Jacksonville FL | Tree Services Northeast Florida | Stump Masters Jax';
+const description = 'Professional tree services throughout Northeast Florida. Serving Duval, St. Johns, Clay, and Nassau counties. Stump grinding, tree trimming, debris removal. Veteran-owned, licensed & insured. Call 904-408-2450';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -17,472 +17,165 @@ const description = 'Professional stump grinding and tree removal serving Jackso
   ]} />
   
   <main>
-    <!-- Hero Section -->
-    <section class="relative bg-black py-12 px-4 border-b-4 border-brand-yellow">
+    <!-- Service Areas Overview -->
+    <section class="section bg-gray-700">
       <div class="container-standard">
-        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow text-center mb-4">
-          Service Areas in Northeast Florida
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow text-center mb-8">
+          Stump Grinding Services in Northeast Florida
         </h1>
-        <div class="section-divider"></div>
-        <p class="text-xl text-gray-300 text-center max-w-3xl mx-auto leading-relaxed">
-          Stump Masters Jax proudly serves Jacksonville and surrounding areas with professional stump grinding and tree removal services. We offer same-day and next-day service throughout Northeast Florida.
-        </p>
-      </div>
-    </section>
-
-    <!-- Coverage Overview -->
-    <section class="section bg-gray-700">
-      <div class="container-standard">
-        <h2 class="section-header">Our Coverage Area</h2>
-        <div class="section-divider"></div>
         
-        <div class="mb-12">
-          <h3 class="subsection-header">Fast, Reliable Service Across Northeast Florida</h3>
-          <p class="text-body">
-            We provide professional stump grinding and tree stump removal services throughout the greater Jacksonville area. Our veteran-owned business is committed to serving our local community with the same dedication and precision we learned in military service.
+        <!-- County Cards -->
+        <div class="grid-2-col mb-12">
+          <!-- Duval County -->
+          <a href="/service-areas/duval-county" class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer">
+            <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">Duval County</h3>
+            <p class="text-body mb-4">
+              Professional tree services throughout Duval County, including Jacksonville and the Beaches communities. Stump grinding, tree trimming, and debris removal with same-day service.
+            </p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Jacksonville & Beaches</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Downtown to Northside</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">All neighborhoods covered</span>
+              </li>
+            </ul>
+            <div class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 w-full group">
+              <span class="text-sm">Learn More</span>
+              <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- St. Johns County -->
+          <a href="/service-areas/st-johns-county" class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer">
+            <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">St. Johns County</h3>
+            <p class="text-body mb-4">
+              Expert tree services in St. Johns County, including St. Augustine, Ponte Vedra, and surrounding areas. Professional stump grinding and tree care.
+            </p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">St. Augustine & Beaches</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Ponte Vedra & Nocatee</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Historic to modern areas</span>
+              </li>
+            </ul>
+            <div class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 w-full group">
+              <span class="text-sm">Learn More</span>
+              <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Clay County -->
+          <a href="/service-areas/clay-county" class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer">
+            <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">Clay County</h3>
+            <p class="text-body mb-4">
+              Professional tree services throughout Clay County, including Orange Park, Middleburg, and Green Cove Springs. Reliable stump grinding and tree care.
+            </p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Orange Park & Fleming Island</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Middleburg & Green Cove Springs</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Keystone Heights area</span>
+              </li>
+            </ul>
+            <div class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 w-full group">
+              <span class="text-sm">Learn More</span>
+              <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Nassau County -->
+          <a href="/service-areas/nassau-county" class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer">
+            <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">Nassau County</h3>
+            <p class="text-body mb-4">
+              Expert tree services in Nassau County, including Fernandina Beach, Yulee, and Amelia Island. Professional stump grinding and coastal tree care.
+            </p>
+            <ul class="space-y-1 mb-4">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Fernandina Beach</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Amelia Island</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300 text-sm">Yulee & Callahan</span>
+              </li>
+            </ul>
+            <div class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 w-full group">
+              <span class="text-sm">Learn More</span>
+              <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+
+        <!-- Service Links -->
+        <div class="text-center mb-12">
+          <p class="text-gray-300 mb-4">
+            Professional tree services available in all areas
           </p>
-          <p class="text-body">
-            <span class="text-emphasis">Same-day service available</span> in most areas! We understand that stump removal is often time-sensitive, whether you're preparing for a landscaping project, selling your home, or addressing a safety hazard.
-          </p>
-          <ul class="space-y-1 mt-4">
-            <li class="flex items-start gap-2">
-              <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-              <span class="text-gray-300">Serving 3 counties across Northeast Florida</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-              <span class="text-gray-300">Same-day and next-day service available</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-              <span class="text-gray-300">Free estimates for all service areas</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-              <span class="text-gray-300">Licensed and insured in all counties we serve</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Duval County -->
-    <section class="section bg-black">
-      <div class="container-standard">
-        <h2 class="section-header">Duval County Stump Grinding Services</h2>
-        <div class="section-divider"></div>
-        
-        <p class="section-intro">
-          As Jacksonville's premier stump grinding service, we serve all of Duval County with fast, professional tree stump removal.
-        </p>
-        <div class="text-center mb-8">
-          <a href="/duval-county-stump-grinding" class="btn btn-primary">
-            View All Duval County Services →
-          </a>
-        </div>
-
-        <div class="grid-3-col mb-12">
-          <!-- Jacksonville -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">Jacksonville</h3>
-            <p class="text-body text-small">
-              Serving all Jacksonville neighborhoods including Riverside, Avondale, San Marco, Mandarin, Southside, Northside, Westside, and Arlington. We're your local stump grinding experts.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Downtown Jacksonville</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Riverside & Avondale</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>San Marco & San Jose</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Mandarin</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Southside & Baymeadows</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Arlington</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Northside</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Westside</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Jacksonville Beach -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">Jacksonville Beach</h3>
-            <p class="text-body text-small">
-              Professional stump grinding services for Jacksonville Beach residents and businesses. We understand the unique challenges of coastal properties and sandy soil conditions.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Beaches Town Center</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Pablo Historical Park area</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>South Jax Beach</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Oceanfront properties</span>
-              </li>
-            </ul>
-            <p class="text-body text-small mt-4">
-              <span class="text-emphasis">Response Time:</span> Same-day or next-day service typically available.
-            </p>
-          </div>
-
-          <!-- Atlantic Beach -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">Atlantic Beach</h3>
-            <p class="text-body text-small">
-              Serving Atlantic Beach with expert stump removal services. From beachfront properties to inland neighborhoods, we handle stumps of all sizes.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Atlantic Beach proper</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Seminole Beach area</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Mayport area</span>
-              </li>
-            </ul>
-            <p class="text-body text-small mt-4">
-              <span class="text-emphasis">Response Time:</span> Same-day or next-day service typically available.
-            </p>
-          </div>
-
-          <!-- Neptune Beach -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">Neptune Beach</h3>
-            <p class="text-body text-small">
-              Neptune Beach stump grinding specialists. We serve residential and commercial properties throughout this beautiful coastal community.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Neptune Beach residential</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Jarboe Park area</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Atlantic Blvd corridor</span>
-              </li>
-            </ul>
-            <p class="text-body text-small mt-4">
-              <span class="text-emphasis">Response Time:</span> Same-day or next-day service typically available.
-            </p>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <p class="text-xl text-gray-300 mb-6">
-            Looking for <span class="text-emphasis">stump grinding in Duval County</span>? We're here to help!
-          </p>
-          <a href="tel:+19044082450" class="btn btn-primary">
-            📞 Call 904-408-2450
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- St. Johns County -->
-    <section class="section bg-gray-700">
-      <div class="container-standard">
-        <h2 class="section-header">St. Johns County Stump Removal</h2>
-        <div class="section-divider"></div>
-        
-        <p class="section-intro">
-          Professional stump grinding services throughout St. Johns County, from historic St. Augustine to upscale Ponte Vedra communities.
-        </p>
-        <div class="text-center mb-8">
-          <a href="/st-johns-county-stump-grinding" class="btn btn-primary">
-            View All St. Johns County Services →
-          </a>
-        </div>
-
-        <div class="grid-3-col mb-12">
-          <!-- St. Augustine -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">St. Augustine</h3>
-            <p class="text-body text-small">
-              Serving America's oldest city with modern stump grinding services. We respect the historic character of St. Augustine properties while providing efficient stump removal.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Historic District</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>St. Augustine Beach</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>World Golf Village</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Anastasia Island</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>St. Augustine Shores</span>
-              </li>
-            </ul>
-            <p class="text-body text-small mt-4">
-              <span class="text-emphasis">Response Time:</span> Next-day service typically available.
-            </p>
-          </div>
-
-          <!-- Ponte Vedra -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">Ponte Vedra</h3>
-            <p class="text-body text-small">
-              Premium stump grinding services for Ponte Vedra's upscale properties. We understand the high standards expected in this community and deliver exceptional results.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Ponte Vedra proper</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Sawgrass</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Nocatee</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Palm Valley</span>
-              </li>
-            </ul>
-            <p class="text-body text-small mt-4">
-              <span class="text-emphasis">Response Time:</span> Next-day service typically available.
-            </p>
-          </div>
-
-          <!-- Ponte Vedra Beach -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">Ponte Vedra Beach</h3>
-            <p class="text-body text-small">
-              Specialized stump removal for Ponte Vedra Beach oceanfront and golf course properties. Professional service that respects your property's premium landscaping.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Oceanfront properties</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>TPC Sawgrass area</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Marsh Landing</span>
-              </li>
-            </ul>
-            <p class="text-body text-small mt-4">
-              <span class="text-emphasis">Response Time:</span> Next-day service typically available.
-            </p>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <p class="text-xl text-gray-300 mb-6">
-            Need <span class="text-emphasis">stump grinding in St. Johns County</span>? We're ready to serve you!
-          </p>
-          <a href="tel:+19044082450" class="btn btn-primary">
-            📞 Call 904-408-2450
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Clay County -->
-    <section class="section bg-black">
-      <div class="container-standard">
-        <h2 class="section-header">Clay County Tree Stump Removal</h2>
-        <div class="section-divider"></div>
-        
-        <p class="section-intro">
-          Reliable stump grinding services throughout Clay County. We serve residential and commercial properties with the same dedication and professionalism.
-        </p>
-        <div class="text-center mb-8">
-          <a href="/clay-county-stump-grinding" class="btn btn-primary">
-            View All Clay County Services →
-          </a>
-        </div>
-
-        <div class="grid-3-col mb-12">
-          <!-- Orange Park -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">Orange Park</h3>
-            <p class="text-body text-small">
-              Orange Park's trusted stump grinding service. From residential yards to commercial properties, we handle all your tree stump removal needs efficiently.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Orange Park proper</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Fleming Island</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Lakeside</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Argyle</span>
-              </li>
-            </ul>
-            <p class="text-body text-small mt-4">
-              <span class="text-emphasis">Response Time:</span> Next-day service typically available.
-            </p>
-          </div>
-
-          <!-- Middleburg -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">Middleburg</h3>
-            <p class="text-body text-small">
-              Professional stump removal services for Middleburg and surrounding areas. We bring our expertise to both residential and agricultural properties.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Middleburg proper</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Black Creek</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Rural Clay County</span>
-              </li>
-            </ul>
-            <p class="text-body text-small mt-4">
-              <span class="text-emphasis">Response Time:</span> Next-day service typically available.
-            </p>
-          </div>
-
-          <!-- Green Cove Springs -->
-          <div class="card">
-            <h3 class="subsection-header-yellow">Green Cove Springs</h3>
-            <p class="text-body text-small">
-              Serving the Clay County seat with reliable stump grinding services. We're equipped to handle stumps of all sizes throughout Green Cove Springs.
-            </p>
-            <ul class="city-list">
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Green Cove Springs</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Penney Farms</span>
-              </li>
-              <li class="city-list-item">
-                <span class="city-arrow">→</span>
-                <span>Surrounding areas</span>
-              </li>
-            </ul>
-            <p class="text-body text-small mt-4">
-              <span class="text-emphasis">Response Time:</span> Next-day service typically available.
-            </p>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <p class="text-xl text-gray-300 mb-6">
-            Looking for <span class="text-emphasis">stump grinding in Clay County</span>? Contact us today!
-          </p>
-          <a href="tel:+19044082450" class="btn btn-primary">
-            📞 Call 904-408-2450
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="section bg-gray-700">
-      <div class="container-standard">
-        <h2 class="section-header">Why Choose Stump Masters Jax?</h2>
-        <div class="section-divider"></div>
-        
-        <div class="grid-2-col">
-          <div class="card">
-            <h3 class="subsection-header-yellow">Local Expertise</h3>
-            <p class="text-body">
-              As a locally-owned and operated business, we understand the unique challenges of Northeast Florida properties. From sandy coastal soil to clay-heavy inland areas, we have the experience and equipment to handle any stump grinding job.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="subsection-header-yellow">Veteran-Owned</h3>
-            <p class="text-body">
-              Our military background means we bring discipline, precision, and dedication to every job. We treat your property with respect and complete every project to the highest standards.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="subsection-header-yellow">Fast Response Times</h3>
-            <p class="text-body">
-              We offer same-day service in most areas and next-day service throughout our coverage area. When you need a stump removed quickly, we're ready to help.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3 class="subsection-header-yellow">Licensed & Insured</h3>
-            <p class="text-body">
-              Fully licensed and insured in all counties we serve. You can have peace of mind knowing your property is protected and we meet all local regulations.
-            </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/services/stump-grinding" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              <span class="text-sm">Stump Grinding</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="/services/tree-trimming" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              <span class="text-sm">Tree Trimming</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="/services/debris-haul-away" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+              <span class="text-sm">Debris Removal</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="section bg-black">
       <div class="container-narrow text-center">
         <h2 class="text-3xl font-bold text-brand-yellow mb-6">
-          Ready to Remove That Stump?
+          Get Your Free Tree Service Estimate Today!
         </h2>
         <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-          No matter where you're located in Northeast Florida, Stump Masters Jax is ready to provide fast, professional stump grinding services. Contact us today for a free estimate!
+          Serving Northeast Florida with professional tree services. Veteran-owned, licensed & insured.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="tel:+19044082450" class="btn btn-primary">

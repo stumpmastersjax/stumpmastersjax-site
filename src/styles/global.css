@@ -14,6 +14,25 @@ body {
   color: #ffffff;
 }
 
+/* Mobile dropdown fixes */
+.mobile-dropdown-content {
+  display: none;
+}
+
+.mobile-dropdown-content.show {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .mobile-dropdown-content {
+    display: none !important;
+  }
+  
+  .mobile-dropdown-content.show {
+    display: block !important;
+  }
+}
+
 .a11y-hidden { 
   position: absolute; 
   left: -10000px; 
@@ -141,7 +160,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 /* Cards */
 .card {
-  background-color: #374151; /* bg-gray-700 */
+  background-color: #000000 !important;
   border: 2px solid #F2C300;
   border-radius: 0.5rem;
   padding: 1.5rem;
@@ -149,7 +168,20 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .card:hover {
-  background-color: #4b5563; /* bg-gray-600 */
+  background-color: #1f2937 !important; /* bg-gray-800 */
+}
+
+/* Service cards */
+.service-card {
+  background-color: #000000 !important;
+  border: 2px solid #F2C300;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: background-color 0.2s;
+}
+
+.service-card:hover {
+  background-color: #1f2937 !important; /* bg-gray-800 */
 }
 
 .card-compact {

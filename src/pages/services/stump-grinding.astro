@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EstimateModal from '../../components/EstimateModal.astro';
+
+const title = 'Stump Grinding Jacksonville FL | Professional Stump Removal | Stump Masters Jax';
+const description = 'Professional stump grinding services in Jacksonville, FL. Expert stump removal below ground level. Veteran-owned, licensed & insured. Same-day service. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Services', url: '/services' },
+    { label: 'Stump Grinding & Removal' }
+  ]} />
+  
+  <main>
+    <!-- Stump Grinding Services -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow text-center mb-8">
+          Stump Grinding & Removal in Jacksonville, FL
+        </h1>
+        
+        <!-- Service Overview -->
+        <div class="grid-2-col mb-12">
+          <div class="card">
+            <h2 class="text-2xl font-bold text-brand-yellow mb-4">What We Offer</h2>
+            <p class="text-body mb-4">
+              Professional stump grinding services that remove tree stumps below ground level (typically 6-12 inches deep) for both residential and commercial properties. State-of-the-art equipment handles stumps of any size with minimal yard disruption.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Stumps of all sizes - no job too large or small</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Below-ground grinding (6-12 inches deep)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Complete stump removal option available</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Wood chip removal or leave as mulch</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Same-day service available</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Minimal yard disruption</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h2 class="text-2xl font-bold text-brand-yellow mb-4">Why Choose Our Stump Grinding?</h2>
+            <p class="text-body mb-4">
+              Veteran-owned and operated with professional equipment and experienced technicians. We deliver superior results with competitive pricing and exceptional customer service.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Veteran-owned and operated</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Fully licensed and insured</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">State-of-the-art equipment</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Experienced, professional team</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Competitive, affordable pricing</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Free estimates over the phone</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Process -->
+        <h2 class="text-3xl font-bold text-brand-yellow text-center mb-8">Our Stump Grinding Process</h2>
+        <div class="grid-3-col mb-12">
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">1. Free Estimate</h3>
+            <p class="text-body text-small">
+              Call us for a free, no-obligation estimate. We'll assess your stump grinding needs and provide a competitive quote.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">2. Professional Grinding</h3>
+            <p class="text-body text-small">
+              Our team arrives with specialized stump grinding equipment to remove your stump below ground level efficiently.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">3. Clean Cleanup</h3>
+            <p class="text-body text-small">
+              We remove all wood chips and debris, leaving your property clean and ready for your next landscaping project.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service Areas Link -->
+        <div class="text-center mb-12">
+          <p class="text-gray-300 mb-4">
+            Serving Jacksonville and surrounding areas throughout Northeast Florida
+          </p>
+          <a href="/service-areas" class="btn btn-primary">
+            View All Service Areas →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-black">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Get Your Free Stump Grinding Estimate Today!
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Same-day and next-day service available. Veteran-owned, licensed & insured.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <button data-open-estimate-modal class="btn btn-secondary">
+            Request Free Estimate
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  <EstimateModal />
+</BaseLayout>

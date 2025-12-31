@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EstimateModal from '../../components/EstimateModal.astro';
+
+const title = 'Tree Trimming Jacksonville FL | Professional Tree Pruning | Stump Masters Jax';
+const description = 'Expert tree trimming and pruning services in Jacksonville, FL. Tree care up to 15 feet. Veteran-owned, licensed & insured. Same-day service. Call 904-408-2450';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <Breadcrumbs items={[
+    { label: 'Home', url: '/' },
+    { label: 'Services', url: '/services' },
+    { label: 'Tree Trimming & Pruning' }
+  ]} />
+  
+  <main>
+    <!-- Tree Trimming Services -->
+    <section class="section bg-gray-700">
+      <div class="container-standard">
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow text-center mb-8">
+          Tree Trimming & Pruning in Jacksonville, FL
+        </h1>
+        
+        <!-- Service Overview -->
+        <div class="grid-2-col mb-12">
+          <div class="card">
+            <h2 class="text-2xl font-bold text-brand-yellow mb-4">Services Include:</h2>
+            <p class="text-body mb-4">
+              Expert tree trimming services up to 15 feet for properties throughout Jacksonville and surrounding areas. Keep your trees healthy, beautiful, and safe with our professional tree maintenance services.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Tree trimming up to 15 feet</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Pruning for tree health</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Deadwood removal</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Crown thinning and shaping</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Safety hazard removal</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Complete cleanup included</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h2 class="text-2xl font-bold text-brand-yellow mb-4">Benefits of Professional Trimming:</h2>
+            <p class="text-body mb-4">
+              Regular tree trimming provides numerous benefits for your property and tree health. Our professional services ensure optimal growth and safety for your landscape.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Improved tree health and growth</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Enhanced property appearance</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Increased safety for your property</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Better sunlight penetration</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Storm damage prevention</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
+                <span class="text-gray-300">Compliance with local ordinances</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Process -->
+        <h2 class="text-3xl font-bold text-brand-yellow text-center mb-8">Our Tree Trimming Process</h2>
+        <div class="grid-3-col mb-12">
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">1. Assessment</h3>
+            <p class="text-body text-small">
+              We evaluate your trees' health, structure, and trimming needs to determine the best approach for optimal results.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">2. Professional Trimming</h3>
+            <p class="text-body text-small">
+              Our team performs precise trimming using industry-standard techniques and safety equipment to maintain tree health and structure.
+            </p>
+          </div>
+          
+          <div class="card card-compact">
+            <h3 class="subsection-header-yellow">3. Cleanup & Haul Away</h3>
+            <p class="text-body text-small">
+              We remove all branches and debris, leaving your property clean and tidy after the trimming service.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service Areas Link -->
+        <div class="text-center mb-12">
+          <p class="text-gray-300 mb-4">
+            Serving Jacksonville and surrounding areas throughout Northeast Florida
+          </p>
+          <a href="/service-areas" class="btn btn-primary">
+            View All Service Areas →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-black">
+      <div class="container-narrow text-center">
+        <h2 class="text-3xl font-bold text-brand-yellow mb-6">
+          Keep Your Trees Healthy and Beautiful!
+        </h2>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Professional tree trimming services from a veteran-owned company. Same-day service available.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19044082450" class="btn btn-primary">
+            📞 Call 904-408-2450
+          </a>
+          <button data-open-estimate-modal class="btn btn-secondary">
+            Request Free Estimate
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+  <EstimateModal />
+</BaseLayout>
