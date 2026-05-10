@@ -4,8 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import EstimateModal from '../components/EstimateModal.astro';
 
-const title = 'Stump Grinding Jacksonville FL | Professional Tree Services | Stump Masters Jax';
-const description = 'Veteran-owned stump grinding & professional tree services in Jacksonville FL. Same-day service, free estimates. Serving Duval, St. Johns, Clay & Nassau Counties. Call 904-408-2450 for 5-star service.';
+const title = 'Stump Grinding Jacksonville FL | Professional Tree Stump Removal Services';
+const description = 'Veteran-owned stump grinding & professional tree stump removal services in Jacksonville FL. Free estimates. Serving Duval, St. Johns, Clay & Nassau Counties. Call 904-408-2450 for 5-star service.';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -16,11 +16,11 @@ const description = 'Veteran-owned stump grinding & professional tree services i
     <section class="relative bg-black py-16 px-4 border-b-4 border-brand-yellow">
       <div class="max-w-6xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-yellow mb-6">
-          Stump Grinding Jacksonville FL | Professional Tree Services
+          Stump Grinding Jacksonville FL | Professional Tree Stump Removal Services
         </h1>
         <div class="section-divider"></div>
         <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-          Veteran-Owned • Licensed & Insured • Same-Day Service Available • 5-Star Rated
+          Veteran-Owned • Licensed & Insured • 5-Star Rated
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <a 
@@ -33,7 +33,7 @@ const description = 'Veteran-owned stump grinding & professional tree services i
             data-open-estimate-modal
             class="btn btn-secondary text-lg px-8 py-4"
           >
-            Get Free Estimate
+            Request Free Estimate
           </button>
         </div>
         <div class="flex items-center justify-center gap-6 text-gray-300">
@@ -42,12 +42,6 @@ const description = 'Veteran-owned stump grinding & professional tree services i
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
             <span>5.0 Google Rating</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <svg class="w-5 h-5 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <span>Same-Day Service</span>
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,17 +120,17 @@ const description = 'Veteran-owned stump grinding & professional tree services i
     <!-- Services Overview -->
     <section class="py-16 px-4 bg-black">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-brand-yellow text-center mb-4">Professional Tree Services</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-yellow text-center mb-4">Services</h2>
         <div class="w-24 h-1 bg-brand-yellow mx-auto mb-12"></div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="max-w-4xl mx-auto text-center mb-12">
           <!-- Stump Grinding -->
-          <div class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer flex flex-col h-full">
+          <div class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer max-w-2xl mx-auto">
             <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">Stump Grinding & Removal</h3>
             <p class="text-gray-300 mb-6">
               Professional stump grinding below ground level for residential and commercial properties. Fast, clean, and affordable stump removal throughout Northeast Florida.
             </p>
-            <ul class="space-y-2 mb-6">
+            <ul class="space-y-1 mb-4">
               <li class="flex items-start gap-2">
                 <span class="text-brand-yellow text-lg mt-0.5">✓</span>
                 <span class="text-gray-300 text-sm">Same-day service available</span>
@@ -152,66 +146,6 @@ const description = 'Veteran-owned stump grinding & professional tree services i
             </ul>
             <div class="text-center mt-auto pt-6">
               <a href="/services/stump-grinding" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 group">
-                <span class="text-sm">Learn More</span>
-                <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Tree Trimming -->
-          <div class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer flex flex-col h-full">
-            <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">Tree Trimming & Pruning</h3>
-            <p class="text-gray-300 mb-6">
-              Expert tree trimming services for trees up to 15 feet. Keep your property safe and trees healthy with professional maintenance and pruning.
-            </p>
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Trees up to 15 feet</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Safety-focused trimming</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Storm damage cleanup</span>
-              </li>
-            </ul>
-            <div class="text-center mt-auto pt-6">
-              <a href="/services/tree-trimming" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 group">
-                <span class="text-sm">Learn More</span>
-                <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- Debris Haul Away -->
-          <div class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer flex flex-col h-full">
-            <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">Tree Debris Haul Away</h3>
-            <p class="text-gray-300 mb-6">
-              Complete tree debris removal and cleanup services. We handle all types of yard waste and leave your property looking pristine.
-            </p>
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Storm cleanup specialists</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Complete debris removal</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Eco-friendly disposal</span>
-              </li>
-            </ul>
-            <div class="text-center mt-auto pt-6">
-              <a href="/services/debris-haul-away" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 group">
                 <span class="text-sm">Learn More</span>
                 <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
@@ -307,7 +241,87 @@ const description = 'Veteran-owned stump grinding & professional tree services i
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="text-center">
             <div class="bg-brand-yellow w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-black font-bold text-lg">USA</span>
+              <svg class="w-8 h-8 text-black" viewBox="0 0 24 24" fill="currentColor">
+                <!-- USA Flag Design - Black Version -->
+                <!-- Flag background -->
+                <rect x="2" y="2" width="20" height="20" fill="white" stroke="black" stroke-width="0.1" rx="0.5"/>
+                
+                <!-- Red stripes -->
+                <rect x="2" y="2" width="20" height="1.54" fill="#B22234"/>
+                <rect x="2" y="5.08" width="20" height="1.54" fill="white"/>
+                <rect x="2" y="6.62" width="20" height="1.54" fill="#B22234"/>
+                <rect x="2" y="8.16" width="20" height="1.54" fill="white"/>
+                <rect x="2" y="9.7" width="20" height="1.54" fill="#B22234"/>
+                <rect x="2" y="11.24" width="20" height="1.54" fill="white"/>
+                <rect x="2" y="12.78" width="20" height="1.54" fill="#B22234"/>
+                <rect x="2" y="14.32" width="20" height="1.54" fill="white"/>
+                <rect x="2" y="15.86" width="20" height="1.54" fill="#B22234"/>
+                <rect x="2" y="17.4" width="20" height="1.54" fill="white"/>
+                <rect x="2" y="18.94" width="20" height="1.54" fill="#B22234"/>
+                <rect x="2" y="20.48" width="20" height="1.54" fill="white"/>
+                
+                <!-- Blue canton -->
+                <rect x="2" y="2" width="8" height="10.77" fill="#3C3B6E"/>
+                
+                <!-- Stars (50 stars in 9 rows, simplified for visibility) -->
+                <!-- Row 1 -->
+                <circle cx="3.08" cy="3.08" r="0.15" fill="white"/>
+                <circle cx="4.62" cy="3.08" r="0.15" fill="white"/>
+                <circle cx="6.15" cy="3.08" r="0.15" fill="white"/>
+                <circle cx="7.69" cy="3.08" r="0.15" fill="white"/>
+                <circle cx="9.23" cy="3.08" r="0.15" fill="white"/>
+                <circle cx="10.77" cy="3.08" r="0.15" fill="white"/>
+                
+                <!-- Row 2 -->
+                <circle cx="3.85" cy="4.31" r="0.15" fill="white"/>
+                <circle cx="5.38" cy="4.31" r="0.15" fill="white"/>
+                <circle cx="6.92" cy="4.31" r="0.15" fill="white"/>
+                <circle cx="8.46" cy="4.31" r="0.15" fill="white"/>
+                <circle cx="10" cy="4.31" r="0.15" fill="white"/>
+                
+                <!-- Row 3 -->
+                <circle cx="4.62" cy="5.54" r="0.15" fill="white"/>
+                <circle cx="6.15" cy="5.54" r="0.15" fill="white"/>
+                <circle cx="7.69" cy="5.54" r="0.15" fill="white"/>
+                <circle cx="9.23" cy="5.54" r="0.15" fill="white"/>
+                
+                <!-- Row 4 -->
+                <circle cx="3.85" cy="6.77" r="0.15" fill="white"/>
+                <circle cx="5.38" cy="6.77" r="0.15" fill="white"/>
+                <circle cx="6.92" cy="6.77" r="0.15" fill="white"/>
+                <circle cx="8.46" cy="6.77" r="0.15" fill="white"/>
+                <circle cx="10" cy="6.77" r="0.15" fill="white"/>
+                
+                <!-- Row 5 -->
+                <circle cx="4.62" cy="8" r="0.15" fill="white"/>
+                <circle cx="6.15" cy="8" r="0.15" fill="white"/>
+                <circle cx="7.69" cy="8" r="0.15" fill="white"/>
+                <circle cx="9.23" cy="8" r="0.15" fill="white"/>
+                
+                <!-- Row 6 -->
+                <circle cx="3.85" cy="9.23" r="0.15" fill="white"/>
+                <circle cx="5.38" cy="9.23" r="0.15" fill="white"/>
+                <circle cx="6.92" cy="9.23" r="0.15" fill="white"/>
+                <circle cx="8.46" cy="9.23" r="0.15" fill="white"/>
+                <circle cx="10" cy="9.23" r="0.15" fill="white"/>
+                
+                <!-- Row 7 -->
+                <circle cx="4.62" cy="10.46" r="0.15" fill="white"/>
+                <circle cx="6.15" cy="10.46" r="0.15" fill="white"/>
+                <circle cx="7.69" cy="10.46" r="0.15" fill="white"/>
+                <circle cx="9.23" cy="10.46" r="0.15" fill="white"/>
+                
+                <!-- Row 8 -->
+                <circle cx="5.38" cy="11.69" r="0.15" fill="white"/>
+                <circle cx="6.92" cy="11.69" r="0.15" fill="white"/>
+                <circle cx="8.46" cy="11.69" r="0.15" fill="white"/>
+                <circle cx="9.23" cy="11.69" r="0.15" fill="white"/>
+                
+                <!-- Row 9 -->
+                <circle cx="6.15" cy="12.92" r="0.15" fill="white"/>
+                <circle cx="7.69" cy="12.92" r="0.15" fill="white"/>
+                <circle cx="8.46" cy="12.92" r="0.15" fill="white"/>
+              </svg>
             </div>
             <h3 class="text-xl font-bold text-white mb-2">Veteran-Owned</h3>
             <p class="text-gray-300 text-sm">Military precision and professionalism in every project. 10% military discount available.</p>

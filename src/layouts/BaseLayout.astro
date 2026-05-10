@@ -30,13 +30,17 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Favicon - Comprehensive declarations for all browsers and search engines -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/favicon.ico" />
-    <link rel="icon" href="/favicon.ico" />
+    <!-- Favicon - Optimized for Google Search and all browsers -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
     
     <link rel="canonical" href={canonicalURL} />
     
@@ -72,7 +76,7 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
       "alternateName": "Stumpmasters Jacksonville",
       "image": socialImage.toString(),
       "logo": `${Astro.site}images/stumpmastersjax.thumbnail.png`,
-      "description": "Professional stump grinding, tree stump removal, tree trimming, and debris haul away services in Jacksonville, FL. Veteran-owned and operated serving Duval County, St. Johns County, and Clay County.",
+      "description": "Professional stump grinding and tree stump removal services in Jacksonville, FL. Veteran-owned and operated serving Duval County, St. Johns County, and Clay County.",
       "url": Astro.site?.toString(),
       "telephone": "+19044082450",
       "email": "stumpmastersjax@gmail.com",
@@ -162,7 +166,7 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Tree & Stump Services",
+        "name": "Stump Grinding Services",
         "itemListElement": [
           {
             "@type": "Offer",
@@ -170,33 +174,6 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
               "@type": "Service",
               "name": "Stump Grinding",
               "description": "Professional stump grinding services in Jacksonville, FL. Fast, efficient removal of tree stumps of all sizes."
-            },
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Tree Stump Removal",
-              "description": "Complete tree stump removal for residential and commercial properties throughout Northeast Florida."
-            },
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Tree Trimming",
-              "description": "Professional tree trimming and pruning services up to 15 feet. Maintain healthy, beautiful trees."
-            },
-            "availability": "https://schema.org/InStock"
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Tree Debris Haul Away",
-              "description": "Complete tree debris removal and haul away services. Clean, professional cleanup."
             },
             "availability": "https://schema.org/InStock"
           }

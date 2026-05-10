@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import EstimateModal from '../components/EstimateModal.astro';
 
-const title = 'Tree Services Jacksonville FL | Stump Grinding & Removal | Stump Masters Jax';
-const description = 'Professional tree services in Jacksonville, FL. Stump grinding, tree removal, trimming, and debris haul away. Veteran-owned, licensed & insured. Same-day service. Call 904-408-2450';
+const title = 'Stump Grinding Jacksonville FL | Professional Stump Removal Services | Stump Masters Jax';
+const description = 'Professional stump grinding services in Jacksonville, FL. Expert stump removal for residential and commercial properties. Veteran-owned, licensed & insured. Same-day service. Call 904-408-2450';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -21,17 +21,17 @@ const description = 'Professional tree services in Jacksonville, FL. Stump grind
     <section class="section bg-gray-700">
       <div class="container-standard">
         <h1 class="text-4xl md:text-5xl font-bold text-brand-yellow text-center mb-8">
-          Our Tree Services
+          Professional Stump Grinding Services
         </h1>
         <div class="section-divider"></div>
         <p class="section-intro text-center">
-          Professional tree care services for residential and commercial properties throughout Northeast Florida
+          Expert stump grinding and removal services for residential and commercial properties throughout Northeast Florida
         </p>
         
         <!-- Service Cards -->
-        <div class="grid-3-col mb-12">
+        <div class="max-w-4xl mx-auto text-center mb-12">
           <!-- Stump Grinding -->
-          <a href="/services/stump-grinding" class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer">
+          <div class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer max-w-2xl mx-auto">
             <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">Stump Grinding & Removal</h3>
             <p class="text-body mb-4">
               Professional stump grinding services that remove tree stumps below ground level. State-of-the-art equipment handles stumps of any size with minimal yard disruption.
@@ -49,70 +49,20 @@ const description = 'Professional tree services in Jacksonville, FL. Stump grind
                 <span class="text-brand-yellow text-lg mt-0.5">✓</span>
                 <span class="text-gray-300 text-sm">Same-day service available</span>
               </li>
-            </ul>
-            <div class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 w-full group">
-              <span class="text-sm">Learn More</span>
-              <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </div>
-          </a>
-
-          <!-- Tree Trimming -->
-          <a href="/services/tree-trimming" class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer">
-            <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">Tree Trimming & Pruning</h3>
-            <p class="text-body mb-4">
-              Expert tree trimming services up to 15 feet. Keep your trees healthy, beautiful, and safe with our professional tree maintenance services.
-            </p>
-            <ul class="space-y-1 mb-4">
               <li class="flex items-start gap-2">
                 <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Tree health pruning</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Deadwood removal</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Safety hazard removal</span>
+                <span class="text-gray-300 text-sm">Clean finish guaranteed</span>
               </li>
             </ul>
-            <div class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 w-full group">
-              <span class="text-sm">Learn More</span>
-              <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
+            <div class="text-center mt-auto pt-6">
+              <a href="/services/stump-grinding" class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 group">
+                <span class="text-sm">Learn More</span>
+                <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
             </div>
-          </a>
-
-          <!-- Tree Debris Haul Away -->
-          <a href="/services/debris-haul-away" class="service-card block hover:bg-gray-800 transition-all duration-200 group cursor-pointer">
-            <h3 class="text-2xl font-bold text-brand-yellow mb-4 group-hover:text-yellow-400 transition-colors">Tree Debris Haul Away</h3>
-            <p class="text-body mb-4">
-              Complete tree debris removal and haul away services. We handle cleanup after stump grinding, tree trimming, or storm damage with eco-friendly disposal.
-            </p>
-            <ul class="space-y-1 mb-4">
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Brush removal</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Storm damage cleanup</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-brand-yellow text-lg mt-0.5">✓</span>
-                <span class="text-gray-300 text-sm">Complete yard cleanup</span>
-              </li>
-            </ul>
-            <div class="inline-flex items-center justify-center px-6 py-3 bg-brand-yellow text-black font-bold rounded-md hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 w-full group">
-              <span class="text-sm">Learn More</span>
-              <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
