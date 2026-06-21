@@ -63,7 +63,177 @@ Cancel
 Thank you for your request. We've received your information and will be reaching out to you shortly with your free estimate. We look forward to serving you!
 </p> <a href="/" class="inline-block px-8 py-3 bg-brand-yellow text-black font-bold rounded-lg hover:bg-yellow-400 transition">
 Return to Homepage
-</a> </div> </div> </div> </div> </div> <script type="module">function y(){const n=document.getElementById("estimate-modal"),i=document.getElementById("close-modal"),a=document.getElementById("cancel-modal"),e=document.getElementById("estimate-form"),c=document.getElementById("success-message"),r=document.getElementById("modal-header"),l=document.getElementById("modal-description"),p=document.querySelectorAll("[data-open-estimate-modal]");function h(){n&&(n.classList.remove("hidden"),document.body.style.overflow="hidden")}function d(){n&&(n.classList.add("hidden"),document.body.style.overflow="",e?.reset(),c?.classList.add("hidden"),r?.classList.remove("hidden"),l?.classList.remove("hidden"))}p.forEach(s=>{s.addEventListener("click",h)}),i&&i.addEventListener("click",d),a&&a.addEventListener("click",d),document.addEventListener("keydown",s=>{s.key==="Escape"&&n&&!n.classList.contains("hidden")&&d()}),e&&e.addEventListener("submit",async s=>{if(s.preventDefault(),s.stopPropagation(),!e.checkValidity()){e.reportValidity();return}const o=new FormData(e),m=o.get("name"),g=o.get("email"),v=o.get("phone"),E=o.get("address"),L=o.get("description"),w=o.get("contact_preference"),b=m.split(" ")[0],k={name:m,email:g,phone:v,display_name:b,other_fields:{Address:E,"Service Description":L,"Contact Preference":w,Source:"Website","Form Type":"Estimate Request",Timestamp:new Date().toISOString(),"Page URL":window.location.href}},t=e.querySelector('button[type="submit"]'),B=t?.textContent;t&&(t.disabled=!0,t.textContent="Sending...");try{const f=await fetch("https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/Ae4ZG0N9",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(k)});if(f.ok){const S=await f.json();console.log("Privyr lead created successfully:",S),e.classList.add("hidden"),c?.classList.remove("hidden"),r?.classList.add("hidden"),l?.classList.add("hidden"),typeof trackEvent=="function"&&trackEvent("Submit",{category:"Form",label:"Estimate Request"}),setTimeout(()=>{d(),e.classList.remove("hidden")},5e3)}else throw new Error("Privyr CRM submission failed")}catch(u){console.error("Error:",u),alert("There was an error submitting your request. Please call us at 904-408-2450 instead."),t&&(t.disabled=!1,t.textContent=B)}})}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",y):y();</script>  <script>
+</a> </div> </div> </div> </div> </div> <script>(function(){const GOOGLE_ADS_CONVERSION_ID = "AW-17789957371";
+const GOOGLE_ADS_CONVERSION_LABEL = "XVv6CKTs68IcEPvp9KJC";
+
+  // Modal functionality - runs on every page that includes this component
+  function initEstimateModal() {
+    const modal = document.getElementById('estimate-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const cancelBtn = document.getElementById('cancel-modal');
+    const form = document.getElementById('estimate-form');
+    const successMessage = document.getElementById('success-message');
+    const modalHeader = document.getElementById('modal-header');
+    const modalDescription = document.getElementById('modal-description');
+    
+    // Find all buttons that should open the modal
+    const openButtons = document.querySelectorAll('[data-open-estimate-modal]');
+    
+    function openModal() {
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    function closeModal() {
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        form?.reset();
+        successMessage?.classList.add('hidden');
+        // Show header and description again
+        modalHeader?.classList.remove('hidden');
+        modalDescription?.classList.remove('hidden');
+      }
+    }
+    
+    // Attach click handlers to all open buttons
+    openButtons.forEach(button => {
+      button.addEventListener('click', openModal);
+    });
+    
+    // Close button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+    
+    // Cancel button
+    if (cancelBtn) {
+      cancelBtn.addEventListener('click', closeModal);
+    }
+    
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+    
+    // Handle form submission
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Check if form is valid using HTML5 validation
+        if (!form.checkValidity()) {
+          // Show validation messages without closing modal
+          form.reportValidity();
+          return;
+        }
+        
+        // Collect form data
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const address = formData.get('address');
+        const description = formData.get('description');
+        const contactPreference = formData.get('contact_preference');
+        
+        // Extract first name for display_name
+        const firstName = name.split(' ')[0];
+        
+        // Prepare Privyr payload according to API documentation
+        const privyrData = {
+          name: name,
+          email: email,
+          phone: phone,
+          display_name: firstName,
+          other_fields: {
+            "Address": address,
+            "Service Description": description,
+            "Contact Preference": contactPreference,
+            "Source": "Website",
+            "Form Type": "Estimate Request",
+            "Timestamp": new Date().toISOString(),
+            "Page URL": window.location.href
+          }
+        };
+        
+        // Show loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn?.textContent;
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+        }
+        
+        try {
+          // Privyr CRM webhook URL
+          const webhookUrl = 'https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/Ae4ZG0N9';
+          
+          const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(privyrData)
+          });
+          
+          if (response.ok) {
+            const result = await response.json();
+            console.log('Privyr lead created successfully:', result);
+            
+            form.classList.add('hidden');
+            successMessage?.classList.remove('hidden');
+            // Hide header and description when showing success
+            modalHeader?.classList.add('hidden');
+            modalDescription?.classList.add('hidden');
+            
+            // Track conversion with Google Ads
+            if (typeof gtag === 'function') {
+              gtag('event', 'conversion', {
+                'send_to': `${GOOGLE_ADS_CONVERSION_ID}/${GOOGLE_ADS_CONVERSION_LABEL}`,
+                'value': 1.0,
+                'currency': 'USD',
+                'transaction_id': '' // Optional: add unique transaction ID if needed
+              });
+            }
+
+            // Track with other analytics (Umami, GA4, Meta Pixel)
+            if (typeof trackEvent === 'function') {
+              trackEvent('Submit', { category: 'Form', label: 'Estimate Request' });
+            }
+            
+            // Auto-close after 5 seconds
+            setTimeout(() => {
+              closeModal();
+              form.classList.remove('hidden');
+            }, 5000);
+          } else {
+            throw new Error('Privyr CRM submission failed');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('There was an error submitting your request. Please call us at 904-408-2450 instead.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }
+        }
+      });
+    }
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initEstimateModal);
+  } else {
+    initEstimateModal();
+  }
+})();</script>  <script>
       // Umami Event Tracking - Production Only
       window.trackEvent = function(eventName, eventData = {}) {
         // Only track in production and if umami is available

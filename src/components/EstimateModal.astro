@@ -1,5 +1,16 @@
 ---
 // Estimate Request Modal Component
+
+// Google Ads Conversion Tracking Configuration
+// To set up conversion tracking:
+// 1. Go to Google Ads: https://ads.google.com/
+// 2. Navigate to: Tools & Settings → Measurement → Conversions
+// 3. Click "New conversion action" → "Website"
+// 4. Set up action (e.g., "Estimate Form Submission")
+// 5. Copy your Conversion ID and Conversion Label from the tag
+// 6. Replace the values below:
+const GOOGLE_ADS_CONVERSION_ID = 'AW-17789957371';  // Your Google Ads ID (already installed)
+const GOOGLE_ADS_CONVERSION_LABEL = 'XVv6CKTs68IcEPvp9KJC';   // Conversion label for "Submit lead form"
 ---
 
 <!-- Estimate Request Modal -->
@@ -186,7 +197,7 @@
   </div>
 </div>
 
-<script>
+<script define:vars={{ GOOGLE_ADS_CONVERSION_ID, GOOGLE_ADS_CONVERSION_LABEL }}>
   // Modal functionality - runs on every page that includes this component
   function initEstimateModal() {
     const modal = document.getElementById('estimate-modal');
@@ -313,7 +324,17 @@
             modalHeader?.classList.add('hidden');
             modalDescription?.classList.add('hidden');
             
-            // Track conversion
+            // Track conversion with Google Ads
+            if (typeof gtag === 'function') {
+              gtag('event', 'conversion', {
+                'send_to': `${GOOGLE_ADS_CONVERSION_ID}/${GOOGLE_ADS_CONVERSION_LABEL}`,
+                'value': 1.0,
+                'currency': 'USD',
+                'transaction_id': '' // Optional: add unique transaction ID if needed
+              });
+            }
+
+            // Track with other analytics (Umami, GA4, Meta Pixel)
             if (typeof trackEvent === 'function') {
               trackEvent('Submit', { category: 'Form', label: 'Estimate Request' });
             }
