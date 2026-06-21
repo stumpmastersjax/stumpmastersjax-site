@@ -22,6 +22,10 @@ const thumbnailImage = new URL('/images/stumpmastersjax.thumbnail.png', Astro.si
 // Analytics IDs - replace with actual IDs when available
 const GA4_ID = 'G-XXXXXXXXXX'; // Replace with your GA4 Measurement ID
 const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
+
+// Google Ads Conversion Tracking
+const GOOGLE_ADS_CONVERSION_ID = 'AW-17789957371';
+const CLICK_TO_CALL_CONVERSION_LABEL = 'WFrHCPW20sIcEPvp9KJC'; // Click to call conversion
 ---
 
 <!doctype html>
@@ -31,16 +35,13 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <!-- Favicon - Optimized for Google Search and all browsers -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     
     <link rel="canonical" href={canonicalURL} />
     
@@ -269,7 +270,8 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
       }
     </script>
     
-    <!-- Meta Pixel -->
+    <!-- Meta Pixel - DISABLED (uncomment when ready to use) -->
+    <!--
     <script is:inline define:vars={{ META_PIXEL_ID }}>
       if (localStorage.getItem('analytics-consent') === 'true') {
         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -281,6 +283,7 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
         fbq('track', 'PageView');
       }
     </script>
+    -->
     <!-- Google Ads Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17789957371"></script>
     <script>
@@ -289,16 +292,18 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
       gtag('js', new Date());
       gtag('config', 'AW-17789957371');
     </script>
-    <!-- Meta Pixel noscript fallback -->
+    <!-- Meta Pixel noscript fallback - DISABLED -->
+    <!--
     <noscript>
       <img height="1" width="1" style="display:none"
            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}/>
     </noscript>
+    -->
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
     
-    <script is:inline>
+    <script is:inline define:vars={{ GOOGLE_ADS_CONVERSION_ID, CLICK_TO_CALL_CONVERSION_LABEL }}>
       // Umami Event Tracking - Production Only
       window.trackEvent = function(eventName, eventData = {}) {
         // Only track in production and if umami is available
@@ -310,11 +315,11 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
         if (typeof gtag !== 'undefined') {
           gtag('event', eventName, eventData);
         }
-        
-        // Legacy Meta Pixel tracking (if still needed)
-        if (typeof fbq !== 'undefined') {
-          fbq('track', eventName, eventData);
-        }
+
+        // Legacy Meta Pixel tracking - DISABLED
+        // if (typeof fbq !== 'undefined') {
+        //   fbq('track', eventName, eventData);
+        // }
       };
       
       // Auto-track phone call clicks
@@ -324,9 +329,20 @@ const META_PIXEL_ID = 'YOUR_PIXEL_ID'; // Replace with your Meta Pixel ID
         phoneLinks.forEach(link => {
           link.addEventListener('click', function() {
             const phoneNumber = this.getAttribute('href').replace('tel:', '');
-            trackEvent('call_click', { 
+
+            // Track with Google Ads conversion
+            if (typeof gtag === 'function') {
+              gtag('event', 'conversion', {
+                'send_to': `${GOOGLE_ADS_CONVERSION_ID}/${CLICK_TO_CALL_CONVERSION_LABEL}`,
+                'value': 1.0,
+                'currency': 'USD'
+              });
+            }
+
+            // Track with other analytics
+            trackEvent('call_click', {
               phone: phoneNumber,
-              location: window.location.pathname 
+              location: window.location.pathname
             });
           });
         });
